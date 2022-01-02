@@ -1,9 +1,9 @@
 import React, { CSSProperties } from 'react'
-import * as styles from './Stack.css'
+import * as styles from './Split.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { vars } from '../global.css'
 
-export type StackProps = {
+export type RowProps = {
   gap?: number | string
   /** Inspired by Radix UI's API */
   asChild?: boolean
@@ -15,7 +15,7 @@ export type StackProps = {
 
 type Ref = HTMLDivElement
 
-const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
+const Split = React.forwardRef<Ref, RowProps>(function VStack ({
   children,
   // xAlign = 'initial',
   // yAlign = 'initial',
@@ -30,7 +30,7 @@ const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
     <div
       {...props}
       ref={ref}
-      className={`${styles.stack} ${props.className ?? ''}`}
+      className={`${styles.split} ${props.className ?? ''}`}
       style={{
         ...style,
         ...assignInlineVars({
@@ -43,4 +43,4 @@ const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
   )
 })
 
-export default Stack
+export default Split

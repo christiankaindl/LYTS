@@ -1,0 +1,48 @@
+import Row from './Row'
+
+# Row
+A horizontal stack. For a vertical stack, see \<Stack />.
+
+<Row>
+  <button>With</button>
+  <button>buttons</button>
+  <button>inside</button>
+</Row>
+
+``` js
+code elem
+```
+
+Row renders a CSS flexbox with `flex-direction: row`. LYTS tries to be lean when it comes to not re-invent the wheel and leaves you full control. As such, if you add a button to the Row, it stretches the full width, because the default value of `align-items` is "stretch":
+
+export const Example2 = () => {
+  return (
+    <Row gap={1.5}>
+      <p>
+        This is a Row
+      </p>
+      <Row gap={0.5}>
+        <p>
+          And nested Rows
+        </p>
+        <button>
+          button 1
+        </button>
+        <button>
+          button 2
+        </button>
+      </Row>
+      <button>A button</button>
+    </Row>
+  )
+}
+
+<Example2 />
+
+{/* <LiveProvider code='<Example2 />' scope={{ Example2 }}>
+  <LiveEditor />
+  <LiveError />
+  <LivePreview />
+</LiveProvider> */}
+
+## Composition

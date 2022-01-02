@@ -7,8 +7,8 @@ globalStyle('html, body', {
 })
 
 globalStyle(lyts, {
-  outline: '1px solid rgba(0, 144, 255, 0.98)',
-  padding: 12,
-  borderRadius: 6,
+  outline: '2px solid rgba(0, 144, 255, 0.98)',
+  padding: 18,
+  borderRadius: 12,
   backgroundColor: 'rgb(255, 255, 255, 0.9)'
 })

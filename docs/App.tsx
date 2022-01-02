@@ -1,14 +1,10 @@
 import styles from './App.module.css'
 import Stack from '../src/Stack/Stack'
 import StackDocs from '../src/Stack/Stack.docs.mdx'
+import RowDocs from '../src/Row/Row.docs.mdx'
+import SplitDocs from '../src/Split/Split.docs.mdx'
+import ClampDocs from '../src/Clamp/Clamp.docs.mdx'
 import './index.css'
-
-// import {
-//   LiveProvider,
-//   LiveEditor,
-//   LiveError,
-//   LivePreview
-// } from 'react-live'
 
 function App() {
   return (
@@ -28,9 +24,14 @@ function App() {
           <p>Lorem ipsum</p>
         </Stack>
       </header>
-      <main>
-        <StackDocs />
-      </main>
+      <Stack asChild>
+        <main>
+          <StackDocs />
+          <RowDocs />
+          <SplitDocs />
+          <ClampDocs />
+        </main>
+      </Stack>
       {/* <LiveProvider code='<Example2 />' scope={{ Example2 }} noInline={true}>
         <LiveEditor />
         <LiveError />

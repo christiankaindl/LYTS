@@ -1,0 +1,26 @@
+import Split from './Split'
+
+# Split
+Separate items along a single axis.
+
+export const Example2 = () => {
+  return (
+    <Split>
+      <button>Back</button>
+      <b>Title</b>
+      <button>Button right</button>
+    </Split>
+  )
+}
+
+<Example2 />
+
+You can use \<Split> in either vertical or horizontal direction.
+
+## \<Split> vs. \<Row>
+
+You can achieve a similar effect with Row and setting justify-content to "space-between". There's two reasons why not to do this:
+
+1. Scanability. Different component names makes it easier to make out what the end-result of layout might look like.
+2. Navbar handling
+
