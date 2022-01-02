@@ -1,8 +1,9 @@
 import React, { CSSProperties } from 'react'
 import * as styles from './Row.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
-import { vars } from '../global.css'
+import { vars } from '../index.css'
 import { Slot } from '@radix-ui/react-slot'
+import { lytsId } from '..'
 
 export type RowProps = {
   gap?: number | string
@@ -21,11 +22,17 @@ const Row = React.forwardRef<Ref, RowProps>(function Row ({
   gap = 1,
   inline = false,
   asChild = false,
+  wrap = 'nowrap',
   style = {},
   ...props
 }, ref) {
   const Comp = asChild ? Slot : 'div';
   const _gap = typeof gap === 'number' ? `${gap}em` : gap
+  if (wrap === true) {
+    wrap = 'wrap'
+  } else if (wrap === false) {
+    wrap = 'nowrap'
+  }
   return (
     <Comp
       {...props}
@@ -34,7 +41,8 @@ const Row = React.forwardRef<Ref, RowProps>(function Row ({
       style={{
         ...style,
         ...assignInlineVars({
-          [vars.gap]: _gap
+          [vars.gap]: _gap,
+          [vars.wrap]: wrap
         })
       }}
     >
@@ -44,3 +52,5 @@ const Row = React.forwardRef<Ref, RowProps>(function Row ({
 })
 
 export default Row
+
+Row.__id = lytsId

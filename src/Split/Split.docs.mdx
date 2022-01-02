@@ -1,4 +1,5 @@
 import Split from './Split'
+import Row from '../Row/Row'
 
 # Split
 Separate items along a single axis.
@@ -7,13 +8,27 @@ export const Example2 = () => {
   return (
     <Split>
       <button>Back</button>
-      <b>Title</b>
-      <button>Button right</button>
+      <b>Centered Title</b>
+      <Row>
+        <button>Share</button>
+        <button>Menu</button>
+        <button>Manage</button>
+      </Row>
     </Split>
   )
 }
 
 <Example2 />
+
+<Split>
+  <button>Back</button>
+
+  <Row>
+    <button>Share</button>
+    <button>Menu</button>
+    <button>Manage</button>
+  </Row>
+</Split>
 
 You can use \<Split> in either vertical or horizontal direction.
 

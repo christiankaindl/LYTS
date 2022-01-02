@@ -4,6 +4,7 @@ import StackDocs from '../src/Stack/Stack.docs.mdx'
 import RowDocs from '../src/Row/Row.docs.mdx'
 import SplitDocs from '../src/Split/Split.docs.mdx'
 import ClampDocs from '../src/Clamp/Clamp.docs.mdx'
+import ColumnsDocs from '../src/Columns/Columns.docs.mdx'
 import './index.css'
 
 function App() {
@@ -33,6 +34,8 @@ function App() {
           <SplitDocs />
           <hr />
           <ClampDocs />
+          <hr />
+          <ColumnsDocs />
         </main>
       </Stack>
       {/* <LiveProvider code='<Example2 />' scope={{ Example2 }} noInline={true}>

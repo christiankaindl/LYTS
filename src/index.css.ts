@@ -7,5 +7,6 @@ globalStyle(`${lyts} > *`, {
 })
 
 export const vars = {
-  gap: createVar('gap')
+  gap: createVar('gap'),
+  wrap: createVar('wrap')
 }

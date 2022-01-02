@@ -1,40 +1,37 @@
-import React, { CSSProperties } from 'react'
-import * as styles from './Stack.css'
+import React from 'react'
+import * as styles from './Columns.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
-import { vars } from '../index.css'
 import { Slot } from '@radix-ui/react-slot'
+import { vars } from '@lib/index.css'
 
-export type StackProps = {
+export type ColumnsProps = {
   gap?: number | string
   /** Inspired by Radix UI's API */
   asChild?: boolean
-  inline?: boolean
-  wrap?: boolean | CSSProperties['flexWrap']
   children: React.ReactNode
   [key: string]: any
 } & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 
-const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
+/**
+ * Clamps its children to a max-width and centers them
+ */
+const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
   children,
-  // xAlign = 'initial',
-  // yAlign = 'initial',
   gap = 1,
-  // as = 'div',
-  inline = false,
-  asChild = false,
   style = {},
+  asChild = false,
   ...props
 }, ref) {
   const Comp = asChild ? Slot : 'div';
-
   const _gap = typeof gap === 'number' ? `${gap}em` : gap
+
   return (
     <Comp
       {...props}
       ref={ref}
-      className={`${styles.stack} ${props.className ?? ''}`}
+      className={`${styles.columns} ${props.className ?? ''}`}
       style={{
         ...style,
         ...assignInlineVars({
@@ -47,4 +44,4 @@ const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
   )
 })
 
-export default Stack
+export default Columns

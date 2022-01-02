@@ -1,5 +1,5 @@
-import { fallbackVar, globalStyle, style } from '@vanilla-extract/css'
-import { lyts, vars } from '../global.css'
+import { fallbackVar, style } from '@vanilla-extract/css'
+import { lyts, vars } from '../index.css'
 
 export const row = style([
   lyts,
