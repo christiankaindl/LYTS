@@ -5,7 +5,7 @@ import * as styles from './Row.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { vars } from '../index.css'
 import { Slot } from '@radix-ui/react-slot'
-import { lytsId } from '..'
+import { BaseProps, lytsId } from '..'
 
 export type RowProps = {
   gap?: number | string
@@ -13,7 +13,7 @@ export type RowProps = {
   asChild?: boolean
   wrap?: boolean | CSSProperties['flexWrap']
   children: React.ReactNode
-} & JSX.IntrinsicElements['div']
+} & BaseProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 

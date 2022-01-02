@@ -5,19 +5,16 @@ import * as styles from './Split.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { vars } from '../index.css'
 import { Slot } from '@radix-ui/react-slot'
-import { lytsId } from '..'
+import { BaseProps, lytsId } from '..'
 
 export type SplitProps = {
-  gap?: number | string
-  /** Inspired by Radix UI's API */
-  asChild?: boolean
   inline?: boolean
   /** TODO */
   wrap?: boolean | CSSProperties['flexWrap']
   /** TODO */
   orientation?: 'vertical' | 'horizontal'
   children?: React.ReactNode
-} & JSX.IntrinsicElements['div']
+} & BaseProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 

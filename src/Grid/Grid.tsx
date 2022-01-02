@@ -3,17 +3,16 @@ import * as styles from './Grid.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { vars } from '../index.css'
 import { Slot } from '@radix-ui/react-slot'
+import { BaseProps } from '..'
 
 export type GridProps = {
-  gap?: number | string
   gridItemMinWidth?: string
+  /** TODO */
   gridMaxRowItems?: number
-  /** Inspired by Radix UI's API */
-  asChild?: boolean
   inline?: boolean
   wrap?: boolean | CSSProperties['flexWrap']
   children: React.ReactNode
-} & JSX.IntrinsicElements['div']
+} & BaseProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 

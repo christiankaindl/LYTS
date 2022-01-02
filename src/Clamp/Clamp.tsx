@@ -2,14 +2,13 @@ import React, { Children } from 'react'
 import * as styles from './Clamp.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { Slot } from '@radix-ui/react-slot'
+import { BaseProps } from '..'
 
 export type ClampProps = {
   clamp: string | [string] | [string, string]
-  /** Inspired by Radix UI's API */
-  asChild?: boolean
   children: React.ReactNode
   [key: string]: any
-} & JSX.IntrinsicElements['div']
+} & Omit<BaseProps, 'gap'> & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 

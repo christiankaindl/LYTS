@@ -3,24 +3,19 @@ import * as styles from './Stack.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { vars } from '../index.css'
 import { Slot } from '@radix-ui/react-slot'
+import { BaseProps } from '..'
 
 export type StackProps = {
-  gap?: number | string
-  /** Inspired by Radix UI's API */
-  asChild?: boolean
   inline?: boolean
   wrap?: boolean | CSSProperties['flexWrap']
   children: React.ReactNode
-} & JSX.IntrinsicElements['div']
+} & BaseProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 
 const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
   children,
-  // xAlign = 'initial',
-  // yAlign = 'initial',
   gap = 1,
-  // as = 'div',
   inline = false,
   asChild = false,
   style = {},

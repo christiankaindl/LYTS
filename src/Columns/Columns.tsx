@@ -5,15 +5,13 @@ import * as styles from './Columns.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { Slot } from '@radix-ui/react-slot'
 import { vars } from '@lib/index.css'
+import { BaseProps } from '..'
 
 export type ColumnsProps = {
-  gap?: number | string
-  /** Inspired by Radix UI's API */
-  asChild?: boolean
   children: React.ReactNode
   /** TODO */
   ratio?: string
-} & JSX.IntrinsicElements['div']
+} & BaseProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 
