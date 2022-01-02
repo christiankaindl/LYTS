@@ -2,6 +2,7 @@ import React, { CSSProperties } from 'react'
 import * as styles from './Row.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { vars } from '../global.css'
+import { Slot } from '@radix-ui/react-slot'
 
 export type RowProps = {
   gap?: number | string
@@ -17,17 +18,16 @@ type Ref = HTMLDivElement
 
 const Row = React.forwardRef<Ref, RowProps>(function Row ({
   children,
-  // xAlign = 'initial',
-  // yAlign = 'initial',
   gap = 1,
-  // as = 'div',
   inline = false,
+  asChild = false,
   style = {},
   ...props
 }, ref) {
+  const Comp = asChild ? Slot : 'div';
   const _gap = typeof gap === 'number' ? `${gap}em` : gap
   return (
-    <div
+    <Comp
       {...props}
       ref={ref}
       className={`${styles.row} ${props.className ?? ''}`}
@@ -39,7 +39,7 @@ const Row = React.forwardRef<Ref, RowProps>(function Row ({
       }}
     >
       {children}
-    </div>
+    </Comp>
   )
 })
 

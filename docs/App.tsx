@@ -24,11 +24,14 @@ function App() {
           <p>Lorem ipsum</p>
         </Stack>
       </header>
-      <Stack asChild>
+      <Stack asChild gap={1.5}>
         <main>
           <StackDocs />
+          <hr />
           <RowDocs />
+          <hr />
           <SplitDocs />
+          <hr />
           <ClampDocs />
         </main>
       </Stack>

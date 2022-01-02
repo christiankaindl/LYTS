@@ -2,6 +2,7 @@ import React, { CSSProperties } from 'react'
 import * as styles from './Split.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { vars } from '../global.css'
+import { Slot } from '@radix-ui/react-slot'
 
 export type RowProps = {
   gap?: number | string
@@ -15,19 +16,18 @@ export type RowProps = {
 
 type Ref = HTMLDivElement
 
-const Split = React.forwardRef<Ref, RowProps>(function VStack ({
+const Split = React.forwardRef<Ref, RowProps>(function Split ({
   children,
-  // xAlign = 'initial',
-  // yAlign = 'initial',
   gap = 1,
-  // as = 'div',
   inline = false,
+  asChild = false,
   style = {},
   ...props
 }, ref) {
+  const Comp = asChild ? Slot : 'div';
   const _gap = typeof gap === 'number' ? `${gap}em` : gap
   return (
-    <div
+    <Comp
       {...props}
       ref={ref}
       className={`${styles.split} ${props.className ?? ''}`}
@@ -39,7 +39,7 @@ const Split = React.forwardRef<Ref, RowProps>(function VStack ({
       }}
     >
       {children}
-    </div>
+    </Comp>
   )
 })
 

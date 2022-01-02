@@ -2,6 +2,7 @@ import React, { CSSProperties } from 'react'
 import * as styles from './Stack.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { vars } from '../global.css'
+import { Slot } from '@radix-ui/react-slot'
 
 export type StackProps = {
   gap?: number | string
@@ -22,12 +23,15 @@ const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
   gap = 1,
   // as = 'div',
   inline = false,
+  asChild = false,
   style = {},
   ...props
 }, ref) {
+  const Comp = asChild ? Slot : 'div';
+
   const _gap = typeof gap === 'number' ? `${gap}em` : gap
   return (
-    <div
+    <Comp
       {...props}
       ref={ref}
       className={`${styles.stack} ${props.className ?? ''}`}
@@ -39,7 +43,7 @@ const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
       }}
     >
       {children}
-    </div>
+    </Comp>
   )
 })
 

@@ -9,10 +9,6 @@ A horizontal stack. For a vertical stack, see \<Stack />.
   <button>inside</button>
 </Row>
 
-``` js
-code elem
-```
-
 Row renders a CSS flexbox with `flex-direction: row`. LYTS tries to be lean when it comes to not re-invent the wheel and leaves you full control. As such, if you add a button to the Row, it stretches the full width, because the default value of `align-items` is "stretch":
 
 export const Example2 = () => {
