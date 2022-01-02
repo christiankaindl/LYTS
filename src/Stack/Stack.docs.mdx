@@ -1,0 +1,34 @@
+import Stack from './Stack'
+
+# Stack
+
+A vertical stack. For a horizontal stack, see \<Row />.
+
+<Stack>
+  ## This is a stack
+  With multiple spaced items
+</Stack>
+
+```
+code elem
+```
+
+Stack renders a CSS flexbox with `flex-direction: row`. LYTS tries to be lean when it comes to not re-invent the wheel and leaves you full control. As such, if you add a button to the stack, it stretches the full width, because the default value of `align-items` is "stretch":
+
+---
+
+export const Example2 = () => {
+  return (
+    <Stack>
+      <p>
+        This is a Stack
+      </p>
+      <p>
+        With multiple spaced items
+      </p>
+      <button>A button</button>
+    </Stack>
+  )
+}
+
+<Example2 />

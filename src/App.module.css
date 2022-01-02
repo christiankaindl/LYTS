@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -24,6 +24,9 @@
   color: white;
 }
 
+.App main {
+  padding: 2em;
+}
 .App-link {
   color: #61dafb;
 }
