@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import logo from './logo.svg'
 import styles from './App.module.css'
+import Stack from './Stack/Stack'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,6 +11,14 @@ function App() {
       <header className={styles['App-header']}>
         <img src={logo} className={styles['App-logo']} alt="logo" />
         <p>Hello Vite + React!</p>
+        <Stack>
+          <p>
+            This is a Stack
+          </p>
+          <p>
+            With multiple spaced items
+          </p>
+        </Stack>
         <p>
           <button type="button" onClick={() => setCount((count) => count + 1)}>
             count is: {count}

@@ -1,0 +1,5 @@
+.stack {
+  display: flex;
+  gap: var(--lyts-gap, 1em);
+  flex-direction: column;
+}
