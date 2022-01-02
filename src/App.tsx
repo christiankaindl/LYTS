@@ -2,48 +2,58 @@ import { useState } from 'react'
 import logo from './logo.svg'
 import styles from './App.module.css'
 import StackDocs from './Stack/Stack.docs.mdx'
+import Stack from './Stack/Stack'
+// import Stack from './Stack/Stack'
+
+// import {
+//   LiveProvider,
+//   LiveEditor,
+//   LiveError,
+//   LivePreview
+// } from 'react-live'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className={styles.App}>
       <header className={styles['App-header']}>
-        <img src={logo} className={styles['App-logo']} alt="logo" />
-        <p>Hello Vite + React!</p>
+        {/* <img src={logo} className={styles['App-logo']} alt="logo" /> */}
+        <h1>LYTS</h1>
         <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
+          React components for building consistent layouts
         </p>
-        <p>
-          Edit <code>App.tsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className={styles['App-link']}
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className={styles['App-link']}
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
+        <Stack>
+          <b>Card</b>
+          {/* <Split>
+            <b>Card</b>
+            <span>Link</span>
+          </Split> */}
+          <p>Lorem ipsum</p>
+        </Stack>
       </header>
       <main>
         <StackDocs />
       </main>
+      {/* <LiveProvider code='<Example2 />' scope={{ Example2 }} noInline={true}>
+        <LiveEditor />
+        <LiveError />
+        <LivePreview />
+      </LiveProvider> */}
     </div>
   )
 }
 
 export default App
+
+// const Example2 = () => {
+//   return (
+//     <Stack>
+//       <p>
+//         This is a Stack
+//       </p>
+//       <p>
+//         With multiple spaced items
+//       </p>
+//       <button>A button</button>
+//     </Stack>
+//   )
+// }

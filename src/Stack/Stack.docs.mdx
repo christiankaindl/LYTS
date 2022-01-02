@@ -1,4 +1,11 @@
 import Stack from './Stack'
+// import {
+//   LiveProvider,
+//   LiveEditor,
+//   LiveError,
+//   LivePreview
+// } from 'react-live'
+// import source from './Stack'
 
 # Stack
 
@@ -9,13 +16,11 @@ A vertical stack. For a horizontal stack, see \<Row />.
   With multiple spaced items
 </Stack>
 
-```
+``` js
 code elem
 ```
 
 Stack renders a CSS flexbox with `flex-direction: row`. LYTS tries to be lean when it comes to not re-invent the wheel and leaves you full control. As such, if you add a button to the stack, it stretches the full width, because the default value of `align-items` is "stretch":
-
----
 
 export const Example2 = () => {
   return (
@@ -32,3 +37,11 @@ export const Example2 = () => {
 }
 
 <Example2 />
+
+{/* <LiveProvider code='<Example2 />' scope={{ Example2 }}>
+  <LiveEditor />
+  <LiveError />
+  <LivePreview />
+</LiveProvider> */}
+
+## Composition
