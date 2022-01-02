@@ -7,6 +7,7 @@ export const row = style([
     display: 'flex',
     gap: fallbackVar(vars.gap, '1em'),
     flexDirection: 'row',
+    flexWrap: vars.wrap,
     alignItems: 'center'
   }
 ])

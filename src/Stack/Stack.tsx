@@ -11,7 +11,6 @@ export type StackProps = {
   inline?: boolean
   wrap?: boolean | CSSProperties['flexWrap']
   children: React.ReactNode
-  [key: string]: any
 } & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement

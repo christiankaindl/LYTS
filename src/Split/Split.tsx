@@ -1,3 +1,5 @@
+/** FIXME: How to handle responsiveness */
+
 import React, { Children, CSSProperties } from 'react'
 import * as styles from './Split.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
@@ -5,19 +7,21 @@ import { vars } from '../index.css'
 import { Slot } from '@radix-ui/react-slot'
 import { lytsId } from '..'
 
-export type RowProps = {
+export type SplitProps = {
   gap?: number | string
   /** Inspired by Radix UI's API */
   asChild?: boolean
   inline?: boolean
+  /** TODO */
   wrap?: boolean | CSSProperties['flexWrap']
-  children: React.ReactNode
-  [key: string]: any
+  /** TODO */
+  orientation?: 'vertical' | 'horizontal'
+  children?: React.ReactNode
 } & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 
-const Split = React.forwardRef<Ref, RowProps>(function Split ({
+const Split = React.forwardRef<Ref, SplitProps>(function Split ({
   children,
   gap = 1,
   inline = false,

@@ -1,3 +1,5 @@
+/** FIXME: How to handle responsiveness */
+
 import React from 'react'
 import * as styles from './Columns.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
@@ -9,7 +11,8 @@ export type ColumnsProps = {
   /** Inspired by Radix UI's API */
   asChild?: boolean
   children: React.ReactNode
-  [key: string]: any
+  /** TODO */
+  ratio?: string
 } & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement

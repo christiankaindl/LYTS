@@ -1,5 +1,6 @@
 import Row from './Row'
 import Split from '../Split/Split'
+import Clamp from '../Clamp/Clamp'
 
 # Row
 A horizontal stack. For a vertical stack, see \<Stack />.
@@ -10,9 +11,11 @@ A horizontal stack. For a vertical stack, see \<Stack />.
   <button>Share</button>
 </Row>
 
-Row renders a CSS flexbox with `flex-direction: row`. Row composes nicely with Split to create split layouts:
+Row composes nicely with Split to create split layouts:
 
-export const Example2 = () => {
+<Example1 />
+
+export const Example1 = () => {
   return (
     <Row gap={1.5}>
       <b>
@@ -30,12 +33,39 @@ export const Example2 = () => {
   )
 }
 
+With the `wrap` prop you can also achieve common "pill" style inline metadata/tags/etc:
+
 <Example2 />
+
+TODO: Dividers?
+
+export const Example2 = () => {
+  return (
+    <Clamp clamp='380px'>
+      <Row wrap>
+        <Pill>Published 01.01.1970</Pill>
+        <Pill>Christian Kaindl</Pill>
+        <Pill>JavaScript</Pill>
+        <Pill>CSS</Pill>
+        <Pill>React</Pill>
+        <Pill>package</Pill>
+        <Pill>layout</Pill>
+        <button>Share</button>
+      </Row>
+    </Clamp>
+  )
+}
+
+export const Pill = ({ children }) => {
+  return (
+    <span style={{ borderRadius: 99, backgroundColor: 'rgb(0, 0, 0, .08)', padding: '4px 9px' }}>
+      {children}
+    </span>
+  )
+}
 
 {/* <LiveProvider code='<Example2 />' scope={{ Example2 }}>
   <LiveEditor />
   <LiveError />
   <LivePreview />
 </LiveProvider> */}
-
-## Composition

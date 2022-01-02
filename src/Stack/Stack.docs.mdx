@@ -11,7 +11,7 @@ import Stack from './Stack'
 
 A vertical stack. For a horizontal stack, see \<Row />.
 
-Stack renders a CSS flexbox with `flex-direction: row`. LYTS tries to be lean when it comes to not re-invent the wheel and leaves you full control. As such, if you add a button to the stack, it stretches the full width, because the default value of `align-items` is "stretch":
+<Example2 />
 
 export const Example2 = () => {
   return (
@@ -19,12 +19,15 @@ export const Example2 = () => {
       <h3>
         This is a Stack
       </h3>
+      <p>
+        No margins need to be used here. The Stack component takes care of everything!
+      </p>
       <Stack gap={0.5}>
         <p>
-          And nested stacks
+          This is a nested stack
         </p>
         <p>
-          And nested stacks
+          With different spacing
         </p>
       </Stack>
       <button>A button</button>
@@ -32,12 +35,8 @@ export const Example2 = () => {
   )
 }
 
-<Example2 />
-
 {/* <LiveProvider code='<Example2 />' scope={{ Example2 }}>
   <LiveEditor />
   <LiveError />
   <LivePreview />
 </LiveProvider> */}
-
-## Composition
