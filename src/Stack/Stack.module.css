@@ -3,3 +3,7 @@
   gap: var(--lyts-gap, 1em);
   flex-direction: column;
 }
+
+.stack > * {
+  margin: 0;
+}

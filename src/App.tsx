@@ -2,6 +2,7 @@ import { useState } from 'react'
 import logo from './logo.svg'
 import styles from './App.module.css'
 import Stack from './Stack/Stack'
+import StackDocs from './Stack/StackDocs.mdx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,7 @@ function App() {
         <img src={logo} className={styles['App-logo']} alt="logo" />
         <p>Hello Vite + React!</p>
         <Stack>
+          <StackDocs />
           <p>
             This is a Stack
           </p>
