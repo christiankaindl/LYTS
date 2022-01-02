@@ -1,5 +1,7 @@
 import React, { CSSProperties } from 'react'
-import styles from './Stack.module.css'
+import * as styles from './Stack.css'
+import { assignInlineVars } from '@vanilla-extract/dynamic'
+import { vars } from '../global.css'
 
 export type StackProps = {
   gap?: number | string
@@ -28,10 +30,12 @@ const Stack = React.forwardRef<Ref, StackProps>(function VStack ({
     <div
       {...props}
       ref={ref}
-      className={`${styles.stack} ${inline ? styles.inline : ''}`}
+      className={`${styles.stack} ${props.className ?? ''}`}
       style={{
         ...style,
-        ['--lyts-gap' as any]: _gap
+        ...assignInlineVars({
+          [vars.gap]: _gap
+        })
       }}
     >
       {children}

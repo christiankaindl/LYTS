@@ -2,6 +2,10 @@ import { visit } from 'unist-util-visit'
 import flatMap from 'unist-util-flatmap'
 import { code } from 'mdast-builder'
 
+/**
+ * Inline React components' source code as a a <code> block.
+ * @returns A new tree
+ */
 export default function remarkSourcePlugin () {
   return (tree, file) => {
     // console.log('tree', tree)

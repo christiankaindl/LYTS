@@ -1,9 +1,7 @@
-import { useState } from 'react'
-import logo from './logo.svg'
 import styles from './App.module.css'
-import StackDocs from './Stack/Stack.docs.mdx'
-import Stack from './Stack/Stack'
-// import Stack from './Stack/Stack'
+import Stack from '../src/Stack/Stack'
+import StackDocs from '../src/Stack/Stack.docs.mdx'
+import './index.css'
 
 // import {
 //   LiveProvider,
@@ -21,7 +19,7 @@ function App() {
         <p>
           React components for building consistent layouts
         </p>
-        <Stack>
+        <Stack style={{ color: 'black' }}>
           <b>Card</b>
           {/* <Split>
             <b>Card</b>
@@ -43,17 +41,3 @@ function App() {
 }
 
 export default App
-
-// const Example2 = () => {
-//   return (
-//     <Stack>
-//       <p>
-//         This is a Stack
-//       </p>
-//       <p>
-//         With multiple spaced items
-//       </p>
-//       <button>A button</button>
-//     </Stack>
-//   )
-// }

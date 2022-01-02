@@ -24,13 +24,18 @@ Stack renders a CSS flexbox with `flex-direction: row`. LYTS tries to be lean wh
 
 export const Example2 = () => {
   return (
-    <Stack>
+    <Stack gap={1.5}>
       <p>
         This is a Stack
       </p>
-      <p>
-        With multiple spaced items
-      </p>
+      <Stack gap={0.5}>
+        <p>
+          And nested stacks
+        </p>
+        <p>
+          And nested stacks
+        </p>
+      </Stack>
       <button>A button</button>
     </Stack>
   )
