@@ -11,7 +11,7 @@ export const columns = style([
 ])
 
 globalStyle(`${columns} > *`, {
-  margin: 'auto',
+  // margin: 'auto',
   flexGrow: 1,
   boxSizing: 'border-box'
 })
