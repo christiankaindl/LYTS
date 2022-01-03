@@ -1,5 +1,7 @@
-import { fallbackVar, globalStyle, style } from '@vanilla-extract/css'
+import { createVar, fallbackVar, globalStyle, style } from '@vanilla-extract/css'
 import { lyts, vars } from '../index.css'
+
+export const flexGrow = createVar('flex-grow')
 
 export const columns = style([
   lyts,
@@ -11,7 +13,7 @@ export const columns = style([
 ])
 
 globalStyle(`${columns} > *`, {
-  // margin: 'auto',
-  flexGrow: 1,
+  flexBasis: 0,
+  flexGrow: fallbackVar(flexGrow, '1'),
   boxSizing: 'border-box'
 })
