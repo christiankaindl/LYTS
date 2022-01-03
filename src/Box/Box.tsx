@@ -3,6 +3,7 @@ import { Slot } from "@radix-ui/react-slot";
 import useMergedRef from "@react-hook/merged-ref";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { CSSProperties, forwardRef, useLayoutEffect, useRef, useState } from "react";
+import * as styles from './Box.css'
 
 export type BoxProps = {
   /** Amount of space between elements */
@@ -71,6 +72,7 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
       {...props}
       // @ts-expect-error
       ref={useMergedRef(ref, myRef)}
+      className={`${styles.box} ${props.className ?? ''}`}
       style={{
         ...style,
         ...assignInlineVars({
