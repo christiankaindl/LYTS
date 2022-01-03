@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React, { Children, FunctionComponent } from 'react'
 import * as styles from './Clamp.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import Box, { BoxProps } from '@lib/Box/Box'
@@ -46,3 +46,24 @@ const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
 })
 
 export default Clamp
+
+export const ClampIcon: FunctionComponent = function StackIcon () {
+  return (
+    <Clamp gap='6px' clamp='32px' style={{ padding: 12, borderRadius: 12, backgroundImage: 'linear-gradient(32grad, #cf91d8, #aa99ec)', height: 64, width: 64 }}>
+      <IconBox />
+    </Clamp>
+  )
+}
+
+const IconBox = function () {
+  return (
+    <div
+      style={{
+        backgroundColor: 'rgb(255 255 255 / 0.9)',
+        borderRadius: 3,
+        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 7px -1px',
+        height: '100%'
+      }}
+    />
+  )
+}
