@@ -5,16 +5,16 @@ import * as styles from './Split.css'
 import { BaseProps } from '..'
 
 export type SplitProps = {
-  inline?: boolean
-  /** TODO */
-  wrap?: boolean | CSSProperties['flexWrap']
-  /** TODO */
-  orientation?: 'vertical' | 'horizontal'
   children?: React.ReactNode
 } & BaseProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 
+/**
+ * Separates items along a single axis.
+ *
+ * Split takes no children and can be composed with both Stack and Row.
+ */
 const Split = React.forwardRef<Ref, SplitProps>(function Split ({
   children,
   style = {},
