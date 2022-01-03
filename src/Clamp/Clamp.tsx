@@ -1,14 +1,13 @@
 import React, { Children } from 'react'
 import * as styles from './Clamp.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
-import { Slot } from '@radix-ui/react-slot'
-import { BaseProps } from '..'
+import Box, { BoxProps } from '@lib/Box/Box'
 
 export type ClampProps = {
   clamp: string | [string] | [string, string]
   children: React.ReactNode
   [key: string]: any
-} & Omit<BaseProps, 'gap'> & JSX.IntrinsicElements['div']
+} & Omit<BoxProps, 'gap'> & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 
@@ -19,11 +18,8 @@ const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
   children,
   clamp,
   style = {},
-  asChild = false,
   ...props
 }, ref) {
-  const Comp = asChild ? Slot : 'div';
-
   if (Children.count(children) > 1) {
     throw Error(`Clamp must be used with a single child, not ${Children.count(children)}`)
   }
@@ -32,7 +28,7 @@ const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
   const clampHeight = Array.isArray(clamp) ? (clamp[1] ?? clamp[0]) : clamp
 
   return (
-    <Comp
+    <Box
       {...props}
       ref={ref}
       className={`${styles.clamp} ${props.className ?? ''}`}
@@ -45,7 +41,7 @@ const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
       }}
     >
       {children}
-    </Comp>
+    </Box>
   )
 })
 
