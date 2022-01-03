@@ -11,6 +11,8 @@ export type ColumnsProps = {
    * 
    * Needs to be set to a string in the format `${number}[.../${number}]` each value separated with a slash "/" is used as a proportion for the `flex-grow` value.
    * For example, a `ratio` value of "1/1.5/1" will grow the middle child 1.5 times more than the other two elements (assuming there are 3 children).
+   *
+   * Note: When using the `ratio` prop, make sure that all direct children forward the `style` prop to the underlying DOM element.
    */
   ratio?: string
   /** TODO? */
@@ -44,11 +46,14 @@ const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
           if (!isValidElement(child)) return child
           return (
             cloneElement(child, {
-              style: assignInlineVars({
-                [styles.flexGrow]: typeof ratios === 'string'
-                  ? ratios
-                  : ratios?.[index] ?? '1'
-              })
+              style: {
+                ...(child.props.style ?? {}),
+                ...assignInlineVars({
+                  [styles.flexGrow]: typeof ratios === 'string'
+                    ? ratios
+                    : ratios?.[index] ?? '1'
+                })
+              }
             })
           )
         })}

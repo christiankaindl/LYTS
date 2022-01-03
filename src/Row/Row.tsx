@@ -45,22 +45,27 @@ const Row = React.forwardRef<Ref, RowProps>(function Row ({
       style={{
         ...style,
         ...assignInlineVars({
-          [vars.wrap]: wrap
+          [vars.wrap]: wrap,
+          ...(expandChildren ? { [styles.flexGrow]: '1' } : {})
         })
       }}
     >
       {ratios === undefined
         ? children
+        // TODO: Only need to map the children like this is expandChildren is a string.
         : Children.map(children, (child, index) => {
           if (!child) return null
           if (!isValidElement(child)) return child
           return (
             cloneElement(child, {
-              style: assignInlineVars({
-                [styles.flexGrow]: typeof ratios === 'string'
-                  ? ratios
-                  : ratios?.[index] ?? '0'
-              })
+              style: {
+                ...(child.props.style ?? {}),
+                ...assignInlineVars({
+                  [styles.flexGrow]: typeof ratios === 'string'
+                    ? ratios
+                    : ratios?.[index] ?? '0'
+                })
+              }
             })
           )
         })
