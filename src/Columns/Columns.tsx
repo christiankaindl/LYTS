@@ -37,20 +37,21 @@ const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
       ref={ref}
       className={`${styles.columns} ${props.className ?? ''}`}
     >
-      {ratios === undefined && children}
-      {ratios !== undefined && Children.map(children, (child, index) => {
-        if (!child) return null
-        if (!isValidElement(child)) return child
-        return (
-          cloneElement(child, {
-            style: assignInlineVars({
-              [styles.flexGrow]: typeof ratios === 'string'
-                ? ratios
-                : ratios?.[index] ?? '1'
+      {ratios === undefined
+        ? children
+        : Children.map(children, (child, index) => {
+          if (!child) return null
+          if (!isValidElement(child)) return child
+          return (
+            cloneElement(child, {
+              style: assignInlineVars({
+                [styles.flexGrow]: typeof ratios === 'string'
+                  ? ratios
+                  : ratios?.[index] ?? '1'
+              })
             })
-          })
-        )
-      })}
+          )
+        })}
     </Box>
   )
 })
