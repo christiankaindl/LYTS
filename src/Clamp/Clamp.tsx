@@ -12,7 +12,7 @@ export type ClampProps = {
 type Ref = HTMLDivElement
 
 /**
- * Clamps its children to a max-width and centers them
+ * Clamps its children to a maximum length (horizontally and/or vertically) and centers them
  */
 const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
   children,

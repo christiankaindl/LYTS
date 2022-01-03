@@ -1,14 +1,26 @@
 import Grid from './Grid'
 import Stack from '../Stack/Stack'
+import Columns from '../Columns/Columns'
 
 # Grid
 Displays items in a responsive grid.
 
 <Example2 />
 
+This example uses the CSS `gridColumn` property on the first element to stretch it the full width:
+
 export const Example2 = () => {
   return (
-    <Grid>
+    <Grid gap='1.5em'>
+      <Columns style={{ gridColumn: '1 / -1' }} ratio='1/1.5'>
+        <img style={{ backgroundColor: 'grey' }} />
+        <Stack>
+          <span>Featured</span>
+          <h3>Product Card</h3>
+          <p>Lorem Ipsum</p>
+          <button>More details</button>
+        </Stack>
+      </Columns>
       <Stack>
         <b>Product Card</b>
         <p>Lorem Ipsum</p>
