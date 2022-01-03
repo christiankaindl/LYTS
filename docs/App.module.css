@@ -27,3 +27,15 @@
 p {
   line-height: 1.5;
 }
+code {
+  padding: 6px 9px;
+  border-radius: 7px;
+  background-color: rgb(0 0 0 / .09);
+}
+
+pre > code {
+  display: block;
+  padding: 15px 18px;
+  border-radius: 12px;
+  background-color: rgb(0 0 0 / .07);
+}
