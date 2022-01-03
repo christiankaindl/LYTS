@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #0090ff !important;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
@@ -18,6 +18,14 @@
   color: white;
 }
 
+.App-header h1 {
+  letter-spacing: 4px;
+  font-size: 3em;
+}
+.why {
+  transform: translateY(-3px) translateX(-1px) rotate(-7deg);
+  display: inline-block;
+}
 .App main {
   padding: 3em 2em;
 }

@@ -1,5 +1,5 @@
 import styles from './App.module.css'
-import Stack from '../src/Stack/Stack'
+import Stack, { StackIcon } from '../src/Stack/Stack'
 import StackDocs from '../src/Stack/Stack.docs.mdx'
 import RowDocs from '../src/Row/Row.docs.mdx'
 import SplitDocs from '../src/Split/Split.docs.mdx'
@@ -7,25 +7,29 @@ import ClampDocs from '../src/Clamp/Clamp.docs.mdx'
 import ColumnsDocs from '../src/Columns/Columns.docs.mdx'
 import GridDocs from '../src/Grid/Grid.docs.mdx'
 import './index.css'
+import Row, { RowIcon } from '@lib/Row/Row'
+import { ClampIcon } from '@lib/Clamp/Clamp'
+import { ColumnsIcon } from '@lib/Columns/Columns'
+import { GridIcon } from '@lib/Grid/Grid'
 
 function App() {
   return (
     <div className={styles.App}>
-      <header className={styles['App-header']}>
-        {/* <img src={logo} className={styles['App-logo']} alt="logo" /> */}
-        <h1>LYTS</h1>
-        <p>
-          React components for building consistent layouts
-        </p>
-        <Stack style={{ color: 'black' }}>
-          <b>Card</b>
-          {/* <Split>
-            <b>Card</b>
-            <span>Link</span>
-          </Split> */}
-          <p>Lorem ipsum</p>
-        </Stack>
-      </header>
+      <Stack asChild gap={1.5}>
+        <header className={styles['App-header']}>
+          <h1>L<span className={styles.why}>Y</span>TS</h1>
+          <p>
+            Layout primitives for React
+          </p>
+          <Row wrap style={{ borderRadius: 21, justifyContent: 'center' }}>
+            <StackIcon />
+            <RowIcon />
+            <ClampIcon />
+            <ColumnsIcon />
+            <GridIcon />
+          </Row>
+        </header>
+      </Stack>
       <Stack asChild gap={1.5}>
         <main>
           <StackDocs />
