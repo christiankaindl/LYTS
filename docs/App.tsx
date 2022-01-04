@@ -1,16 +1,16 @@
+import * as otherStyles from './index.css'
 import styles from './App.module.css'
-import Stack, { StackIcon } from '../src/Stack/Stack'
+import Stack from '../src/Stack/Stack'
 import StackDocs from '../src/Stack/Stack.docs.mdx'
 import RowDocs from '../src/Row/Row.docs.mdx'
 import SplitDocs from '../src/Split/Split.docs.mdx'
 import ClampDocs from '../src/Clamp/Clamp.docs.mdx'
 import ColumnsDocs from '../src/Columns/Columns.docs.mdx'
 import GridDocs from '../src/Grid/Grid.docs.mdx'
-import './index.css'
-import Row, { RowIcon } from '@lib/Row/Row'
-import { ClampIcon } from '@lib/Clamp/Clamp'
-import { ColumnsIcon } from '@lib/Columns/Columns'
-import { GridIcon } from '@lib/Grid/Grid'
+import Row from '@lib/Row/Row'
+import { StackIcon, RowIcon, ClampIcon, ColumnsIcon, GridIcon } from '../src/Icons/Icons'
+import Box from '@lib/Box/Box'
+import Grid from '@lib/Grid/Grid'
 
 function App() {
   return (
@@ -21,7 +21,8 @@ function App() {
           <p>
             Layout primitives for React
           </p>
-          <Row wrap style={{ borderRadius: 21, justifyContent: 'center' }}>
+          <div />
+          <Row wrap className={otherStyles.nav}>
             <StackIcon />
             <RowIcon />
             <ClampIcon />
@@ -30,21 +31,28 @@ function App() {
           </Row>
         </header>
       </Stack>
-      <Stack asChild gap={1.5}>
-        <main>
-          <StackDocs />
-          <hr />
-          <RowDocs />
-          <hr />
-          <SplitDocs />
-          <hr />
-          <ClampDocs />
-          <hr />
-          <ColumnsDocs />
-          <hr />
-          <GridDocs />
+      <Grid asChild gap={3} gridItemMinWidth='25em'>
+        <main className={otherStyles.debug}>
+          <Stack gap={1.5}>
+            <StackDocs />
+          </Stack>
+          <Stack gap={1.5}>
+            <RowDocs />
+          </Stack>
+          <Stack gap={1.5}>
+            <SplitDocs />
+          </Stack>
+          <Stack gap={1.5}>
+            <ClampDocs />
+          </Stack>
+          <Stack gap={1.5}>
+            <ColumnsDocs />
+          </Stack>
+          <Stack gap={1.5}>
+            <GridDocs />
+          </Stack>
         </main>
-      </Stack>
+      </Grid>
       {/* <LiveProvider code='<Example2 />' scope={{ Example2 }} noInline={true}>
         <LiveEditor />
         <LiveError />

@@ -60,6 +60,8 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
       [vars.bleedLeft]: el.style['marginLeft']
     })
 
+    // FIXME: Don't reset margin if no bleed was provided
+    // Or at least log an error
     el.style.marginTop = ''
     el.style.marginRight = ''
     el.style.marginBottom = ''

@@ -42,33 +42,3 @@ const Grid = React.forwardRef<Ref, GridProps>(function Split ({
 })
 
 export default Grid
-
-
-export const GridIcon: FunctionComponent = function StackIcon () {
-  return (
-    <Grid gap='6px' gridItemMinWidth='8px' style={{ padding: 12, borderRadius: 12, backgroundImage: 'linear-gradient(32grad, #5eb0ef, #53b9ab)', height: 64, width: 64 }}>
-      <IconBox />
-      <IconBox />
-      <IconBox />
-      <IconBox />
-      <IconBox />
-      <IconBox />
-      <IconBox />
-      <IconBox />
-      <IconBox />
-    </Grid>
-  )
-}
-
-const IconBox = function ({ style = {} }) {
-  return (
-    <div
-      style={{
-        backgroundColor: 'rgb(255 255 255 / 0.9)',
-        borderRadius: 3,
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 7px -1px',
-        ...style
-      }}
-    />
-  )
-}

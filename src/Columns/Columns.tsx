@@ -62,25 +62,3 @@ const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
 })
 
 export default Columns
-
-export const ColumnsIcon: FunctionComponent = function StackIcon () {
-  return (
-    <Columns gap='6px' ratio='1/2' style={{ padding: 12, borderRadius: 12, backgroundImage: 'linear-gradient(32grad, #aa99ec, #5eb0ef)', height: 64, width: 64 }}>
-      <IconBox />
-      <IconBox />
-    </Columns>
-  )
-}
-
-const IconBox = function ({ style = {} }) {
-  return (
-    <div
-      style={{
-        backgroundColor: 'rgb(255 255 255 / 0.9)',
-        borderRadius: 3,
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 7px -1px',
-        ...style
-      }}
-    />
-  )
-}

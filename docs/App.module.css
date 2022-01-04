@@ -26,6 +26,9 @@
   transform: translateY(-3px) translateX(-1px) rotate(-7deg);
   display: inline-block;
 }
+.App {
+  position: relative;
+}
 .App main {
   padding: 3em 2em;
 }
@@ -46,4 +49,5 @@ pre > code {
   padding: 15px 18px;
   border-radius: 12px;
   background-color: rgb(0 0 0 / .07);
+  overflow: auto;
 }

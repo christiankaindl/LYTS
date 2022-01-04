@@ -22,7 +22,6 @@ type Ref = HTMLDivElement
 const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
   children,
   expandChildren = false,
-  style = {},
   ...props
 }, ref) {
   const ratios = useRatio(expandChildren)
@@ -31,13 +30,6 @@ const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
       {...props}
       ref={ref}
       className={`${styles.stack} ${props.className ?? ''}`}
-      style={{
-        ...style,
-        ...(expandChildren === true 
-            ? assignInlineVars({
-              [styles.flexGrow]: '1'
-            }) : {})
-      }}
     >
       {ratios === undefined
         ? children
@@ -51,8 +43,8 @@ const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
                 ...(child.props.style ?? {}),
                 ...assignInlineVars({
                   [styles.flexGrow]: typeof ratios === 'string'
-                    ? ratios
-                    : ratios?.[index] ?? '0'
+                      ? ratios
+                      : ratios?.[index] ?? '0'
                 })
               }
             })
@@ -63,25 +55,3 @@ const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
 })
 
 export default Stack
-
-export const StackIcon: FunctionComponent = function StackIcon () {
-  return (
-    <Stack gap='6px' expandChildren style={{ padding: 12, borderRadius: 12, backgroundImage: 'linear-gradient(32grad, #ea9280, #e58fb1)', height: 64, width: 64 }}>
-      <IconBox />
-      <IconBox />
-      <IconBox />
-    </Stack>
-  )
-}
-
-const IconBox = function () {
-  return (
-    <div
-      style={{
-        backgroundColor: 'rgb(255 255 255 / 0.9)',
-        borderRadius: 3,
-        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 2px 7px -1px'
-      }}
-    />
-  )
-}
