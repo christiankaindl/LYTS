@@ -1,11 +1,15 @@
 import Columns from './Columns'
 import { ColumnsIcon } from '../Icons/Icons'
 import Stack from '../Stack/Stack'
+import Row from '../Row/Row'
 
-<ColumnsIcon />
-
-# Columns
-Columns its children to a max-width and centers them.
+<Row>
+  <ColumnsIcon />
+  <Stack gap={0.25}>
+    # Columns
+    Single axis columns.
+  </Stack>
+</Row>
 
 export const Example = () => {
   return (
@@ -23,30 +27,3 @@ export const Example = () => {
 }
 
 <Example />
-
-## Recipes
-
-### Landing page section
-
-export const Example2 = () => {
-  return (
-    <Columns ratio='1/2'>
-      <Stack>
-        <h3>Heading</h3>
-        <p>Lorem ipsum</p>
-      </Stack>
-      <Stack>
-        <h3>Heading</h3>
-        <p>Lorem ipsum</p>
-      </Stack>
-    </Columns>
-  )
-}
-
-<Example2 />
-
-### Card
-
-### Sidebar/Details view
-
-### Footer

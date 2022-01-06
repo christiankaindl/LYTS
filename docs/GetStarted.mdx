@@ -1,0 +1,41 @@
+# Get started
+
+LYTS's goal is to make building layouts easier, faster and more maintainable. The components consist of low-level primitives which give a simple API you can build on top of.
+
+Fundamentally, the code should express the designers intent as much as possible while staying flexible and composable. All components work out-of-the-box with zero configuration and sensible defaults.
+
+## Installation
+
+```sh
+npm install @christiankaindl/lyts
+```
+
+## Usage
+
+Import the components you need and compose them until you achieve your desired layout:
+
+```jsx
+const CenterCard: FunctionComponent = function () {
+  return (
+    <Clamp>
+      <Stack gap={0.75} className='card'>
+        <img />
+        <h3></h3>
+        <Row wrap gap={0.5}>
+          items here
+        </Row>
+        <p></p>
+        <Box xAlign='end'>Aligned at the end</Box>
+      </Stack>
+    </Clamp>
+  )
+}
+```
+
+Check out the Examples page for a comprehensive collection of layouts and how to build them with LYTS--Copy/Pasta ready of course :)
+
+## Support & help
+
+If you get stuck, open a discussion on GitHub or reach out to @christiankaindl on Twitter.
+
+In case of bugs, open an issue on GitHub.

@@ -23,7 +23,8 @@ export type BoxProps = {
 type Ref = HTMLDivElement
 
 /**
- * TODO: Responsive props, padding
+ * TODO: Responsive props, padding, x/yAlign
+ * Lowest common denominator
  */
 const Box = forwardRef<Ref, BoxProps>(function Box ({
   children,

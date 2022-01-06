@@ -1,25 +1,19 @@
 import Clamp from './Clamp'
 import { ClampIcon } from '../Icons/Icons'
 import Stack from '../Stack/Stack'
+import Row from '../Row/Row'
 
-<ClampIcon />
+<Row>
+  <ClampIcon />
+  <Stack gap={0.25}>
+    # Clamp
+    Clamps its children to a max-width and centers them.
+  </Stack>
+</Row>
 
-# Clamp
-Clamps its children to a max-width and centers them.
-
-<Clamp clamp='800px'>
+<Clamp clamp='200px'>
   <Stack>
     <h3>Hi, I'm clamped...</h3>
-    <p>... to 800px</p>
+    <p>... to 200px</p>
   </Stack>
 </Clamp>
-
-## Recipes
-
-### Landing page section
-
-Here we use clamp for the overall centering, as well as to give the image on the right a max-width
-
-### Overlay
-
-Here we use both the horizontal and vertical clamping.

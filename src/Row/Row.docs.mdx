@@ -3,11 +3,15 @@ import { RowIcon } from '../Icons/Icons'
 import Split from '../Split/Split'
 import Clamp from '../Clamp/Clamp'
 import Box from '../Box/Box'
+import Stack from '../Stack/Stack'
 
-<RowIcon />
-
-# Row
-A horizontal stack. For a vertical stack, see \<Stack />.
+<Row>
+  <RowIcon />
+  <Stack gap={0.25}>
+    # Row
+    A horizontal stack
+  </Stack>
+</Row>
 
 <Row>
   <button>Save</button>
@@ -40,8 +44,6 @@ export const Example1 = () => {
 With the `wrap` prop you can also achieve common "pill" style inline metadata/tags/etc:
 
 <Example2 />
-
-TODO: Dividers?
 
 export const Example2 = () => {
   return (
@@ -103,23 +105,3 @@ export const Example4 = () => {
     </Row>
   )
 }
-
-## Recipes
-
-### Boxed lists
-
-Boxed lists are becoming more and more common in UI design.
-
-### Navbar
-
-Common split pattern, wrapped into a two-line layout on mobile.
-
-### Breadcrumbs
-
-We can do both wrapped breadcrumbs, or scrolled breadcrumbs. For the scrolled breadcrumbs we are using the `bleed` prop to make sure the scrolling area stretches fully to the edges.
-
-### Landing page section
-
-Here we achieve a similar result as with Columns initially, but the wrapping behaviour is very different.
-
-### Stepper (Checkout)

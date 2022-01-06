@@ -41,8 +41,8 @@ globalStyle(`${debug} ${grid}`, {
 export const nav = style([debug, {
   borderRadius: 24,
   justifyContent: 'center',
-  backgroundColor: 'rgb(255, 255, 255, 0.6)',
-  backdropFilter: 'blur(10px)',
-  boxShadow: '0 5px 24px -7px rgb(0 0 0 / 0.2)',
+  backgroundColor: 'rgb(255, 255, 255, 0.25)',
+  // backdropFilter: 'blur(10px)',
+  boxShadow: '0 5px 24px -7px rgb(0 0 0 / 0.1)',
   padding: 18
 }])

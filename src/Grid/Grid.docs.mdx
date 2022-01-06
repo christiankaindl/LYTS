@@ -2,11 +2,15 @@ import Grid from './Grid'
 import { GridIcon } from '../Icons/Icons'
 import Stack from '../Stack/Stack'
 import Columns from '../Columns/Columns'
+import Row from '../Row/Row'
 
-<GridIcon />
-
-# Grid
-Displays items in a responsive grid.
+<Row>
+  <GridIcon />
+  <Stack gap={0.25}>
+    # Grid
+    Displays items in a responsive grid.
+  </Stack>
+</Row>
 
 <Example2 />
 
@@ -57,13 +61,3 @@ export const Example2 = () => {
     </Grid>
   )
 }
-
-## Recipes
-
-### Control center
-
-Using grid to create a compact controls interface
-
-### Blog posts
-
-

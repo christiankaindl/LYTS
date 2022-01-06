@@ -45,8 +45,7 @@ const Row = React.forwardRef<Ref, RowProps>(function Row ({
       style={{
         ...style,
         ...assignInlineVars({
-          [vars.wrap]: wrap,
-          ...(expandChildren ? { [styles.flexGrow]: '1' } : {})
+          [vars.wrap]: wrap
         })
       }}
     >
