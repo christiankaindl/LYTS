@@ -30,6 +30,7 @@ type Ref = HTMLDivElement
 const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
   children,
   ratio,
+  collapseAt = '0',
   ...props
 }, ref) {
   const ratios = useRatio(ratio)
@@ -38,6 +39,12 @@ const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
       {...props}
       ref={ref}
       className={`${styles.columns} ${props.className ?? ''}`}
+      style={{
+        ...(props.style ?? {}),
+        ...assignInlineVars({
+          [styles.collapseAt]: collapseAt
+        })
+      }}
     >
       {ratios === undefined
         ? children
