@@ -1,13 +1,13 @@
+import { box } from '@lib/Box/Box.css'
 import { createVar, fallbackVar, globalStyle, style } from '@vanilla-extract/css'
-import { bleed, lyts, vars } from '../index.css'
+import { lyts, vars } from '../index.css'
 
 export const flexGrow = createVar('flex-grow')
 
 export const stack = style([
   lyts,
-  bleed,
+  box,
   {
-    display: 'flex',
     gap: fallbackVar(vars.gap, '1em'),
     flexDirection: 'column'
   }

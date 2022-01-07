@@ -1,3 +1,4 @@
+import { box } from '@lib/Box/Box.css'
 import { createVar, fallbackVar, globalStyle, style } from '@vanilla-extract/css'
 import { lyts, vars } from '../index.css'
 
@@ -6,10 +7,9 @@ export const collapseAt = createVar('collapse-at')
 
 export const columns = style([
   lyts,
+  box,
   {
-    display: 'flex',
     gap: fallbackVar(vars.gap, '1em'),
-    flexDirection: 'row',
     flexWrap: 'wrap'
   }
 ])

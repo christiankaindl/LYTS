@@ -1,3 +1,4 @@
+import { box } from '@lib/Box/Box.css'
 import { createVar, fallbackVar, globalStyle, style } from '@vanilla-extract/css'
 import { lyts, vars } from '../index.css'
 
@@ -5,10 +6,9 @@ export const flexGrow = createVar('flex-grow')
 
 export const row = style([
   lyts,
+  box,
   {
-    display: 'flex',
     gap: fallbackVar(vars.gap, '1em'),
-    flexDirection: 'row',
     flexWrap: vars.wrap,
     alignItems: 'center'
   }
