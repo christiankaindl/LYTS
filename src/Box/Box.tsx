@@ -2,7 +2,7 @@ import { vars } from "@lib/index.css";
 import { Slot } from "@radix-ui/react-slot";
 import useMergedRef from "@react-hook/merged-ref";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
-import React, { CSSProperties, forwardRef, useLayoutEffect, useRef, useState } from "react";
+import { CSSProperties, forwardRef, useLayoutEffect, useRef, useState } from "react";
 import * as styles from './Box.css'
 
 export type BoxProps = {
