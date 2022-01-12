@@ -3,7 +3,7 @@ import Columns from '@lib/Columns/Columns'
 import Grid from '@lib/Grid/Grid'
 import Row from '@lib/Row/Row'
 import Stack from '@lib/Stack/Stack'
-import { FunctionComponent } from 'react'
+import React, { FunctionComponent } from 'react'
 import IconChild from './IconBox'
 import * as styles from './Icons.css'
 

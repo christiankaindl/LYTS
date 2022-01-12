@@ -1,14 +1,16 @@
 /** FIXME: How to handle responsiveness */
 
-import React, { CSSProperties } from 'react'
+import React from 'react'
 import * as styles from './Split.css'
-import { BaseProps } from '..'
+import { BoxProps } from '@lib/Box/Box'
 
 export type SplitProps = {
   children?: React.ReactNode
-} & BaseProps & JSX.IntrinsicElements['div']
+} & BoxProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
+
+export const splitStyles = styles
 
 /**
  * Separates items along a single axis.
@@ -28,5 +30,7 @@ const Split = React.forwardRef<Ref, SplitProps>(function Split ({
     />
   )
 })
+
+export { Split }
 
 export default Split

@@ -73,4 +73,6 @@ const Row = React.forwardRef<Ref, RowProps>(function Row ({
   )
 })
 
+export { Row }
+
 export default Row

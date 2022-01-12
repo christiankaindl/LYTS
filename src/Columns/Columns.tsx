@@ -20,6 +20,7 @@ export type ColumnsProps = {
 } & BoxProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
+export const columnsStyles = styles
 
 /**
  * Single axis columns.
@@ -67,5 +68,7 @@ const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
     </Box>
   )
 })
+
+export { Columns }
 
 export default Columns

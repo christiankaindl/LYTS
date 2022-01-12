@@ -19,6 +19,8 @@ export type StackProps = {
 
 type Ref = HTMLDivElement
 
+export const stackStyles = styles
+
 const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
   children,
   expandChildren = false,
@@ -53,5 +55,7 @@ const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
     </Box>
   )
 })
+
+export { Stack }
 
 export default Stack

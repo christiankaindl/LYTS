@@ -1,4 +1,4 @@
-import { CSSProperties, FunctionComponent } from "react"
+import React, { CSSProperties, FunctionComponent } from "react"
 
 const IconChild: FunctionComponent<{ style?: CSSProperties }> = function ({ style = {} }) {
   return (

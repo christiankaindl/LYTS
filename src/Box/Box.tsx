@@ -2,7 +2,7 @@ import { vars } from "@lib/index.css";
 import { Slot } from "@radix-ui/react-slot";
 import useMergedRef from "@react-hook/merged-ref";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { CSSProperties, forwardRef, useLayoutEffect, useRef, useState } from "react";
+import React, { CSSProperties, forwardRef, useLayoutEffect, useRef, useState } from "react";
 import * as styles from './Box.css'
 
 export type BoxProps = {
@@ -21,6 +21,7 @@ export type BoxProps = {
 } & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
+export const boxStyles = styles
 
 /**
  * TODO: Responsive props, padding, x/yAlign
@@ -88,5 +89,7 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
     </Comp>
   )
 })
+
+export { Box }
 
 export default Box
