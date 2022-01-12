@@ -16,6 +16,7 @@
   "module": "./dist/lyts.es.js",
   "types": "./dist/src/index.d.ts",
   "exports": {
+    "./style.css": "./style.css",
     ".": {
       "import": "./dist/lyts.es.js",
       "require": "./dist/lyts.umd.js"
