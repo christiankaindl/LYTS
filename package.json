@@ -1,6 +1,8 @@
 {
   "name": "@christiankaindl/lyts",
   "version": "1.0.0-alpha.0",
+  "author": "Christian Kaindl",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
