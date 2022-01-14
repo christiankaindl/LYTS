@@ -4,9 +4,9 @@ import React from 'react'
 import * as styles from './Split.css'
 import { BoxProps } from '@lib/Box/Box'
 
-export type SplitProps = {
+export interface SplitProps extends BoxProps {
   children?: React.ReactNode
-} & BoxProps & JSX.IntrinsicElements['div']
+}
 
 type Ref = HTMLDivElement
 

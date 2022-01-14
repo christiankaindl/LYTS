@@ -4,7 +4,7 @@ import Box, { BoxProps } from '@lib/Box/Box'
 import { useRatio } from '@lib/useRatio'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 
-export type ColumnsProps = {
+export interface ColumnsProps extends BoxProps {
   children: React.ReactNode
   /**
    * Control the proportional distribution of the columns. By default, all columns are distributed equally.
@@ -17,7 +17,7 @@ export type ColumnsProps = {
   ratio?: string
   /** TODO? */
   collapseAt?: string
-} & BoxProps & JSX.IntrinsicElements['div']
+}
 
 type Ref = HTMLDivElement
 export const columnsStyles = styles

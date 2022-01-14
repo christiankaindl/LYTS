@@ -3,12 +3,12 @@ import * as styles from './Grid.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import Box, { BoxProps } from '@lib/Box/Box'
 
-export type GridProps = {
+export interface GridProps extends BoxProps {
   gridItemMinWidth?: string
   /** TODO */
   gridMaxRowItems?: number
   children: React.ReactNode
-} & BoxProps & JSX.IntrinsicElements['div']
+}
 
 type Ref = HTMLDivElement
 

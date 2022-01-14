@@ -18,6 +18,12 @@ export default defineConfig({
       logDiagnostics: true
     })
   ],
+  resolve: {
+    alias: {
+      // Wihtout this alias, TS path aliases (e.g. "@lib/" are not resolved)
+      '@lib': path.resolve(__dirname, 'src')
+    }
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),

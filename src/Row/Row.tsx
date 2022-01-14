@@ -7,7 +7,7 @@ import { vars } from '../index.css'
 import Box, { BoxProps } from '@lib/Box/Box'
 import { useRatio } from '@lib/useRatio'
 
-export type RowProps = {
+export interface RowProps extends BoxProps {
   wrap?: boolean | CSSProperties['flexWrap']
   /**
    * Grow the Row's children to fill the container's width.
@@ -19,7 +19,7 @@ export type RowProps = {
    */
   expandChildren?: boolean | string
   children: React.ReactNode
-} & BoxProps & JSX.IntrinsicElements['div']
+}
 
 type Ref = HTMLDivElement
 

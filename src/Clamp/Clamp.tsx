@@ -3,11 +3,10 @@ import * as styles from './Clamp.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import Box, { BoxProps } from '@lib/Box/Box'
 
-export type ClampProps = {
+export interface ClampProps extends Omit<BoxProps, 'gap'> {
   clamp: string | [string] | [string, string]
   children: React.ReactNode
-  [key: string]: any
-} & Omit<BoxProps, 'gap'> & JSX.IntrinsicElements['div']
+}
 
 type Ref = HTMLDivElement
 export const clampStyles = styles

@@ -4,7 +4,7 @@ import Box, { BoxProps } from '@lib/Box/Box'
 import { useRatio } from '@lib/useRatio'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 
-export type StackProps = {
+export interface StackProps extends BoxProps {
   children: React.ReactNode
   /**
    * Grow the Stack's children to fill the container's height.
@@ -15,7 +15,7 @@ export type StackProps = {
    * @see `ratio`  Columns
    */
   expandChildren?: boolean | string
-} & BoxProps & JSX.IntrinsicElements['div']
+}
 
 type Ref = HTMLDivElement
 
