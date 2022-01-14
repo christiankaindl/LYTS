@@ -1,11 +1,11 @@
 export const lytsId = Symbol('Identifier for LYTS React components')
 
 export * from './Box/Box'
-export * from '@lib/Stack/Stack'
-export * from '@lib/Row/Row'
-export * from '@lib/Clamp/Clamp'
-export * from '@lib/Columns/Columns'
-export * from '@lib/Grid/Grid'
-export * from '@lib/Split/Split'
+export * from './Stack/Stack'
+export * from './Row/Row'
+export * from './Clamp/Clamp'
+export * from './Columns/Columns'
+export * from './Grid/Grid'
+export * from './Split/Split'
 
 // TODO: Export classNames object with all component classes
