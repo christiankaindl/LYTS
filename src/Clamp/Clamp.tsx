@@ -7,7 +7,7 @@ export type ClampProps = {
   clamp: string | [string] | [string, string]
   children: React.ReactNode
   [key: string]: any
-} & Omit<BoxProps, 'gap'>
+} & Omit<BoxProps, 'gap'> & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 export const clampStyles = styles

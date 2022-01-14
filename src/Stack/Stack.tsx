@@ -15,7 +15,7 @@ export type StackProps = {
    * @see `ratio`  Columns
    */
   expandChildren?: boolean | string
-} & BoxProps
+} & BoxProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 

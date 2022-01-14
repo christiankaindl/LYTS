@@ -19,7 +19,7 @@ export type RowProps = {
    */
   expandChildren?: boolean | string
   children: React.ReactNode
-} & BoxProps
+} & BoxProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 

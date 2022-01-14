@@ -6,7 +6,7 @@ import { BoxProps } from '@lib/Box/Box'
 
 export type SplitProps = {
   children?: React.ReactNode
-} & BoxProps
+} & BoxProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 

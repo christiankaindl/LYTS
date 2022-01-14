@@ -18,7 +18,7 @@ export type BoxProps = {
   bleedRight?: CSSProperties['padding']
   bleedBottom?: CSSProperties['padding']
   bleedLeft?: CSSProperties['padding']
-} & JSX.IntrinsicElements['div']
+}
 
 type Ref = HTMLDivElement
 export const boxStyles = styles
@@ -27,7 +27,7 @@ export const boxStyles = styles
  * TODO: Responsive props, padding, x/yAlign
  * Lowest common denominator
  */
-const Box = forwardRef<Ref, BoxProps>(function Box ({
+const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Box ({
   children,
   gap = '1em',
   asChild = false,

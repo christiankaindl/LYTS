@@ -8,7 +8,7 @@ export type GridProps = {
   /** TODO */
   gridMaxRowItems?: number
   children: React.ReactNode
-} & BoxProps
+} & BoxProps & JSX.IntrinsicElements['div']
 
 type Ref = HTMLDivElement
 
