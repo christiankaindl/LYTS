@@ -1,5 +1,6 @@
 export const lytsId = Symbol('Identifier for LYTS React components')
-export * from '@lib/Box/Box'
+
+export * from './Box/Box'
 export * from '@lib/Stack/Stack'
 export * from '@lib/Row/Row'
 export * from '@lib/Clamp/Clamp'
