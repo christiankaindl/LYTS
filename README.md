@@ -1,6 +1,8 @@
-# LYTS
-![Abstract illustrations depicting the available layout components](./src/component-icons.png)
-Layout primitives for React.
+<div align='center'>
+  <h1>LYTS</h1>
+  <img src='./src/component-icons.png' alt='Abstract illustrations depicting the available layout components' />
+  <p>Layout primitives for React.</p>
+</div>
 
 - Easy layouting - Powerful primitives for every layout
 - Composable - Combine to create complex layouts
