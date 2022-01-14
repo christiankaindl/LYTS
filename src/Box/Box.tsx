@@ -5,7 +5,7 @@ import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { CSSProperties, forwardRef, useLayoutEffect, useRef, useState } from "react";
 import * as styles from './Box.css'
 
-export declare type BoxProps = {
+export type BoxProps = {
   /** Amount of space between elements */
   gap?: CSSProperties['gap']
   /** Inspired by Radix UI's API */

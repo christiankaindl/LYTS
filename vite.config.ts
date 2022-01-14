@@ -11,7 +11,12 @@ export default defineConfig({
     tsconfigPaths({ root: '.' }),
     vanillaExtractPlugin(),
     react(),
-    dts()
+    // Generate TypeScript types
+    dts({
+      outputDir: './dist',
+      skipDiagnostics: false,
+      logDiagnostics: true
+    })
   ],
   build: {
     lib: {
