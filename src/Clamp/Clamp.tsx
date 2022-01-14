@@ -15,7 +15,7 @@ export const clampStyles = styles
 /**
  * Clamps its children to a maximum length (horizontally and/or vertically) and centers them
  */
-const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
+export const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
   children,
   clamp,
   style = {},
@@ -45,7 +45,3 @@ const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
     </Box>
   )
 })
-
-export { Clamp }
-
-export default Clamp

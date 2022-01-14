@@ -28,7 +28,7 @@ export const columnsStyles = styles
  * 
  * You can customize the space distribution with the `ratio` prop.
  */
-const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
+export const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
   children,
   ratio,
   collapseAt = '0',
@@ -68,7 +68,3 @@ const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
     </Box>
   )
 })
-
-export { Columns }
-
-export default Columns

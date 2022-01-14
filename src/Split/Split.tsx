@@ -6,7 +6,7 @@ import { BoxProps } from '@lib/Box/Box'
 
 export type SplitProps = {
   children?: React.ReactNode
-} & BoxProps & JSX.IntrinsicElements['div']
+} & BoxProps
 
 type Ref = HTMLDivElement
 
@@ -17,7 +17,7 @@ export const splitStyles = styles
  *
  * Split takes no children and can be composed with both Stack and Row.
  */
-const Split = React.forwardRef<Ref, SplitProps>(function Split ({
+export const Split = React.forwardRef<Ref, SplitProps>(function Split ({
   children,
   style = {},
   ...props
@@ -30,7 +30,3 @@ const Split = React.forwardRef<Ref, SplitProps>(function Split ({
     />
   )
 })
-
-export { Split }
-
-export default Split

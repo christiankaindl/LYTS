@@ -17,7 +17,7 @@ export const gridStyles = styles
 /**
  * TODO? https://css-tricks.com/responsive-layouts-fewer-media-queries/
  */
-const Grid = React.forwardRef<Ref, GridProps>(function Split ({
+export const Grid = React.forwardRef<Ref, GridProps>(function Split ({
   children,
   gridItemMinWidth = '300px',
   gridMaxRowItems,
@@ -41,7 +41,3 @@ const Grid = React.forwardRef<Ref, GridProps>(function Split ({
     </Box>
   )
 })
-
-export { Grid }
-
-export default Grid

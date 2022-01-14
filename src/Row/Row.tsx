@@ -23,7 +23,7 @@ export type RowProps = {
 
 type Ref = HTMLDivElement
 
-const Row = React.forwardRef<Ref, RowProps>(function Row ({
+export const Row = React.forwardRef<Ref, RowProps>(function Row ({
   children,
   wrap = 'nowrap',
   expandChildren = false,
@@ -71,7 +71,3 @@ const Row = React.forwardRef<Ref, RowProps>(function Row ({
     </Box>
   )
 })
-
-export { Row }
-
-export default Row
