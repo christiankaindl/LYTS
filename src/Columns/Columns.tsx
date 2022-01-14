@@ -17,7 +17,7 @@ export type ColumnsProps = {
   ratio?: string
   /** TODO? */
   collapseAt?: string
-} & BoxProps & JSX.IntrinsicElements['div']
+} & BoxProps
 
 type Ref = HTMLDivElement
 export const columnsStyles = styles

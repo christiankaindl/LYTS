@@ -1,10 +1,9 @@
 /** FIXME: How to handle responsiveness */
 
-import React, { Children, cloneElement, CSSProperties, FunctionComponent, isValidElement } from 'react'
+import React, { Children, cloneElement, CSSProperties, isValidElement } from 'react'
 import * as styles from './Row.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { vars } from '../index.css'
-import { lytsId } from '..'
 import Box, { BoxProps } from '@lib/Box/Box'
 import { useRatio } from '@lib/useRatio'
 
@@ -20,7 +19,7 @@ export type RowProps = {
    */
   expandChildren?: boolean | string
   children: React.ReactNode
-} & BoxProps & JSX.IntrinsicElements['div']
+} & BoxProps
 
 type Ref = HTMLDivElement
 
