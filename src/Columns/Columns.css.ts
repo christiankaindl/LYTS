@@ -18,5 +18,6 @@ globalStyle(`${columns} > *`, {
   flexGrow: fallbackVar(flexGrow, '1'),
   // Holy Albatross technique: https://heydonworks.com/article/the-flexbox-holy-albatross-reincarnated/
   flexBasis: `calc((${collapseAt} - 100%) * 999)`,
+  width: 0,
   boxSizing: 'border-box'
 })
