@@ -23,6 +23,8 @@ export interface RowProps extends BoxProps {
 
 type Ref = HTMLDivElement
 
+export const rowStyles = styles
+
 export const Row = React.forwardRef<Ref, RowProps>(function Row ({
   children,
   wrap = 'nowrap',
