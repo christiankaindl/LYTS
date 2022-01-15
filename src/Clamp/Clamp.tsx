@@ -20,7 +20,7 @@ export const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
   style = {},
   ...props
 }, ref) {
-  if (Children.count(children) > 1) {
+  if (!Children.only(children)) {
     throw Error(`Clamp must be used with a single child, not ${Children.count(children)}`)
   }
 
