@@ -4,7 +4,7 @@ import Box, { BoxProps } from '@lib/Box/Box'
 import { useRatio } from '@lib/useRatio'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 
-export interface StackProps extends BoxProps {
+export interface StackProps extends BoxProps<'column'> {
   children: React.ReactNode
   /**
    * Grow the Stack's children to fill the container's height.
@@ -32,6 +32,7 @@ export const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
       {...props}
       ref={ref}
       className={`${styles.stack} ${props.className ?? ''}`}
+      orientation='column'
     >
       {ratios === undefined
         ? children

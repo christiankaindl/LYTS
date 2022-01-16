@@ -1,23 +1,23 @@
 import React, { FunctionComponent } from 'react'
 import ReactDOM from 'react-dom'
-import { Stack, Row, Clamp, Columns, Grid } from './'
+import { Stack, Row, Clamp, Columns, Grid, Box } from './'
 
 const App: FunctionComponent = function () {
   return (
     <div>
-      <Stack>
+      <Stack xAlign='end'>
         <span>Item 1</span>
         <span>Item 2</span>
-        <span>Item 3</span>
+        <Box bleedRight='5px'>Item 3</Box>
       </Stack>
       <hr />
-      <Row>
+      <Row xAlign='space-between'>
         <span>Item 1</span>
         <span>Item 2</span>
         <span>Item 3</span>
       </Row>
       <hr />
-      <Clamp clamp='900px'>
+      <Clamp clamp='750px'>
         <span>Child</span>
       </Clamp>
       <hr />

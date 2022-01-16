@@ -1,3 +1,4 @@
+import { useAlign } from "@lib/hooks/useAlign";
 import { vars } from "@lib/index.css";
 import { Slot } from "@radix-ui/react-slot";
 import useMergedRef from "@react-hook/merged-ref";
@@ -5,19 +6,37 @@ import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { CSSProperties, forwardRef, useLayoutEffect, useRef, useState } from "react";
 import * as styles from './Box.css'
 
-export interface BoxProps extends React.HTMLAttributes<HTMLElement> {
+export interface BoxProps<Direction = 'row'> extends React.HTMLAttributes<HTMLElement> {
   /** Amount of space between elements */
   gap?: CSSProperties['gap']
   /** Inspired by Radix UI's API */
   asChild?: boolean
-  /** Amount of space between the border and the content */
-  padding?: CSSProperties['padding']
+  /** Alias for the CSS `flex-direction` property */
+  orientation?: 'row' | 'column'
   /** Visually break out of the parent's box. Useful for visually aligning e.g. transparent buttons */
   bleed?: CSSProperties['padding']
   bleedTop?: CSSProperties['padding']
   bleedRight?: CSSProperties['padding']
   bleedBottom?: CSSProperties['padding']
   bleedLeft?: CSSProperties['padding']
+  /**
+   * Horizontal alignment.
+   * 
+   * Same as CSS' `align-items` property when `orientation='row'`.
+   * Same as CSS' `justify-content` property when `orientation='column'`.
+   */
+  xAlign?: Direction extends 'row'
+    ? CSSProperties['justifyContent']
+    : CSSProperties['alignItems']
+  /**
+   * Vertical alignment.
+   * 
+   * Same as CSS' `justify-content` property when `orientation='row'`.
+   * Same as CSS' `align-items` property when `orientation='column'`.
+   */ 
+  yAlign?: Direction extends 'row'
+    ? CSSProperties['alignItems']
+    : CSSProperties['justifyContent']
 }
 
 type Ref = HTMLDivElement
@@ -37,9 +56,13 @@ const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Bo
   bleedBottom,
   bleedLeft,
   style = {},
+  xAlign = 'initial',
+  yAlign = 'initial',
+  orientation = 'row',
   ...props
 }, ref) {
   const Comp = asChild ? Slot : 'div';
+  const align = useAlign(orientation, xAlign, yAlign)
 
   const myRef = useRef<HTMLDivElement>()
   // TODO: Add padding
@@ -81,6 +104,9 @@ const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Bo
         ...style,
         ...assignInlineVars({
           [vars.gap]: _gap,
+          [styles.vars.justifyContent]: align.justifyContent,
+          [styles.vars.alignItems]: align.alignItems,
+          [styles.vars.flexDirection]: align.flexDirection,
           ..._bleed
         })
       }}
