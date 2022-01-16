@@ -70,9 +70,9 @@ const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Bo
   bleedBottom,
   bleedLeft,
   style = {},
-  xAlign = 'initial',
-  yAlign = 'center',
   orientation = 'row',
+  xAlign = 'initial',
+  yAlign = orientation === 'row' ? 'center' : 'initial',
   ...props
 }, ref) {
   const Comp = asChild ? Slot : 'div';
