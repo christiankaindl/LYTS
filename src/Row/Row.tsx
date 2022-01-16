@@ -27,10 +27,14 @@ type Ref = HTMLDivElement
 
 export const rowStyles = styles
 
+/**
+ * Row automatically centers items by default
+ */
 export const Row = React.forwardRef<Ref, RowProps>(function Row ({
   children,
   wrap = 'nowrap',
   expandChildren = false,
+  yAlign = 'center',
   style = {},
   ...props
 }, ref) {
@@ -51,6 +55,7 @@ export const Row = React.forwardRef<Ref, RowProps>(function Row ({
           [vars.wrap]: wrap
         })
       }}
+      yAlign={yAlign}
     >
       {ratios === undefined
         ? children

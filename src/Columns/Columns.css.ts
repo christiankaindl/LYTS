@@ -6,7 +6,6 @@ export const flexGrow = createVar('flex-grow')
 export const collapseAt = createVar('collapse-at')
 
 export const columns = style([
-  lyts,
   box,
   {
     gap: fallbackVar(vars.gap, '1em'),

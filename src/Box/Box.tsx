@@ -72,7 +72,7 @@ const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Bo
   style = {},
   orientation = 'row',
   xAlign = 'initial',
-  yAlign = orientation === 'row' ? 'center' : 'initial',
+  yAlign = 'initial',
   ...props
 }, ref) {
   const Comp = asChild ? Slot : 'div';
