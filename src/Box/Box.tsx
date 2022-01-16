@@ -15,9 +15,13 @@ export interface BoxProps<Direction = 'row'> extends React.HTMLAttributes<HTMLEl
   orientation?: 'row' | 'column'
   /** Visually break out of the parent's box. Useful for visually aligning e.g. transparent buttons */
   bleed?: CSSProperties['padding']
+  /** Top `bleed` value @see bleed */
   bleedTop?: CSSProperties['padding']
+  /** Right `bleed` value @see bleed */
   bleedRight?: CSSProperties['padding']
+  /** Bottom `bleed` value @see bleed */
   bleedBottom?: CSSProperties['padding']
+  /** Left `bleed` value @see bleed */
   bleedLeft?: CSSProperties['padding']
   /**
    * Horizontal alignment.
