@@ -71,7 +71,7 @@ const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Bo
   bleedLeft,
   style = {},
   xAlign = 'initial',
-  yAlign = 'initial',
+  yAlign = 'center',
   orientation = 'row',
   ...props
 }, ref) {
