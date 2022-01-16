@@ -14,6 +14,5 @@ export const stack = style([
 ])
 
 globalStyle(`${stack} > *`, {
-  flexGrow: fallbackVar(flexGrow, '0'),
-  margin: 0
+  flexGrow: fallbackVar(flexGrow, '0')
 })
