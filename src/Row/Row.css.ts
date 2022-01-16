@@ -8,9 +8,9 @@ export const row = style([
   lyts,
   box,
   {
+    // TODO: Move `gap` to Box?
     gap: fallbackVar(vars.gap, '1em'),
     flexWrap: vars.wrap,
-    alignItems: 'center'
   }
 ])
 
