@@ -7,9 +7,19 @@ import { CSSProperties, forwardRef, useLayoutEffect, useRef, useState } from "re
 import * as styles from './Box.css'
 
 export interface BoxProps<Direction = 'row'> extends React.HTMLAttributes<HTMLElement> {
-  /** Amount of space between elements */
+  /**
+   * Amount of space between elements. Same as CSS' `gap`.
+   * @docs https://developer.mozilla.org/en-US/docs/Web/CSS/gap
+   */
   gap?: CSSProperties['gap']
-  /** Inspired by Radix UI's API */
+  /**
+   * Forward props onto its immediate child (must be the only child)
+   * 
+   * When `true`, the first child is used as the container. Useful for writing semantic HTML with correct element behavior (keyboard interactions, screen-readers).
+   * Inspired by Radix UI's <Slot> API.
+   *
+   * @docs https://www.radix-ui.com/docs/primitives/utilities/slot
+   */
   asChild?: boolean
   /** Alias for the CSS `flex-direction` property */
   orientation?: 'row' | 'column'

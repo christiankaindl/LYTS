@@ -15,7 +15,11 @@ export interface ColumnsProps extends BoxProps {
    * Note: When using the `ratio` prop, make sure that all direct children forward the `style` prop to the underlying DOM element.
    */
   ratio?: string
-  /** TODO? */
+  /**
+   * Collapse children into a vertical layout at this width.
+   * 
+   * Note that `collapseAt` is based on the total element width, and **not** the window width.
+   */
   collapseAt?: string
 }
 

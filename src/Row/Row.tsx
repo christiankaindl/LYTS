@@ -6,6 +6,10 @@ import Box, { BoxProps } from '@lib/Box/Box'
 import { useRatio } from '@lib/useRatio'
 
 export interface RowProps extends BoxProps {
+  /**
+   * Same as CSS' `flex-wrap` property.
+   * @docs https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
+   */
   wrap?: boolean | CSSProperties['flexWrap']
   /**
    * Grow the Row's children to fill the container's width.
@@ -13,7 +17,7 @@ export interface RowProps extends BoxProps {
    * If a string is supplied in the format `${number}[.../${number}]` each value separated with a slash "/" is used as a proportion for the `flex-grow` value.
    * For example, an `expandChildren` value of "1/1.5/1" will grow the middle child 1.5 times more than the other two elements (assuming there are 3 children).
    * 
-   * @see `ratio`  Columns
+   * @see `ratio` in Columns props
    */
   expandChildren?: boolean | string
   children: React.ReactNode

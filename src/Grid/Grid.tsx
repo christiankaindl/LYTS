@@ -5,7 +5,7 @@ import Box, { BoxProps } from '@lib/Box/Box'
 
 export interface GridProps extends BoxProps {
   gridItemMinWidth?: string
-  /** TODO */
+  /** TODO: Different columns API? See https://css-tricks.com/responsive-layouts-fewer-media-queries/ */
   gridMaxRowItems?: number
   children: React.ReactNode
 }
@@ -15,7 +15,7 @@ type Ref = HTMLDivElement
 export const gridStyles = styles
 
 /**
- * TODO? https://css-tricks.com/responsive-layouts-fewer-media-queries/
+ * Responsive simple grid
  */
 export const Grid = React.forwardRef<Ref, GridProps>(function Split ({
   children,
