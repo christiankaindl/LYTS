@@ -47,7 +47,7 @@ type Ref = HTMLDivElement
 export const boxStyles = styles
 
 /**
- * TODO: Responsive props, padding, x/yAlign
+ * TODO: Responsive props
  * Lowest common denominator
  */
 const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Box ({
@@ -69,7 +69,6 @@ const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Bo
   const align = useAlign(orientation, xAlign, yAlign)
 
   const myRef = useRef<HTMLDivElement>()
-  // TODO: Add padding
   const [_bleed, setBleed] = useState({})
   useLayoutEffect(() => {
     const el = myRef?.current

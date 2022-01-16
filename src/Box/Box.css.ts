@@ -7,8 +7,10 @@ export const vars = {
   flexDirection: createVar('flex-direction')
 }
 
-// FIXME: Bleed is not applied
-export const box = style([lyts, bleed, {
-  display: 'flex',
-  ...vars
-}])
+export const box = style([
+  lyts,
+  bleed,
+  {
+    display: 'flex',
+    ...vars
+  }])

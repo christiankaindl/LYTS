@@ -1,5 +1,3 @@
-/** FIXME: How to handle responsiveness */
-
 import React from 'react'
 import * as styles from './Split.css'
 import { BoxProps } from '@lib/Box/Box'

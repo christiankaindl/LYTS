@@ -1,12 +1,11 @@
 import { box } from '@lib/Box/Box.css'
 import { createVar, fallbackVar, style } from '@vanilla-extract/css'
-import { lyts, vars } from '../index.css'
+import { vars } from '../index.css'
 
 export const gridItemMinWidth = createVar('gridItemMinWidth')
 export const gridMaxRowItems = createVar('gridMaxRowItems')
 
 export const grid = style([
-  lyts,
   box,
   {
     display: 'grid',

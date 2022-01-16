@@ -43,7 +43,7 @@ export const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
           return (
             cloneElement(child, {
               style: {
-                ...(child.props.style ?? {}),
+                ...child.props.style,
                 ...assignInlineVars({
                   [styles.flexGrow]: typeof ratios === 'string'
                       ? ratios
