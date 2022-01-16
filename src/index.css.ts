@@ -16,6 +16,8 @@ globalStyle(`${lyts} > *`, {
   margin: 0
 })
 
+// TODO: Don't use CSS vars here to avoid inheritance?
+// Could also prevent accidental margin setting when bleed is used
 export const bleed = style({
   // margin: `${vars.bleedTop} ${fallbackVar(vars.bleedRight, vars.bleedTop)} ${vars.bleedBottom, vars.bleedTop} ${vars.bleedLeft, vars.bleedTop, vars.bleedTop}`,
   marginTop: calc(vars.bleedTop).negate().toString(),

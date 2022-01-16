@@ -92,10 +92,10 @@ const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Bo
     bleedLeft && (el.style.marginLeft = String(bleedLeft))
 
     setBleed({
-      [vars.bleedTop]: el.style['marginTop'],
-      [vars.bleedRight]: el.style['marginRight'],
-      [vars.bleedBottom]: el.style['marginBottom'],
-      [vars.bleedLeft]: el.style['marginLeft']
+      [vars.bleedTop]: el.style['marginTop'] || 0,
+      [vars.bleedRight]: el.style['marginRight'] || 0,
+      [vars.bleedBottom]: el.style['marginBottom'] || 0,
+      [vars.bleedLeft]: el.style['marginLeft'] || 0
     })
 
     // FIXME: Don't reset margin if no bleed was provided
