@@ -1,3 +1,4 @@
+import { bleed, lyts } from "@lib/index.css";
 import { createVar, style } from "@vanilla-extract/css";
 
 export const vars = {
@@ -7,7 +8,7 @@ export const vars = {
 }
 
 // FIXME: Bleed is not applied
-export const box = style([lyts, {
+export const box = style([lyts, bleed, {
   display: 'flex',
   ...vars
 }])
