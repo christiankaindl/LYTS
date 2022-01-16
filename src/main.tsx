@@ -8,7 +8,12 @@ const App: FunctionComponent = function () {
       <Stack xAlign='end'>
         <span>Item 1</span>
         <span>Item 2</span>
-        <Box bleedRight='5px'>Item 3</Box>
+        <Box bleedTop='5px' style={{ border: '1px solid black' }}>
+          <span>Box child</span>
+          <Box style={{ border: '1px solid black' }}>
+            Nested box child
+          </Box>
+        </Box>
       </Stack>
       <hr />
       <Row xAlign='space-between'>
