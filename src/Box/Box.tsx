@@ -1,4 +1,5 @@
 import { useAlign } from "@lib/hooks/useAlign";
+import useIsomorphicLayoutEffect from "@lib/hooks/useIsomorphicLayoutEffect";
 import { vars } from "@lib/index.css";
 import { Slot } from "@radix-ui/react-slot";
 import useMergedRef from "@react-hook/merged-ref";
@@ -80,7 +81,7 @@ const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Bo
 
   const myRef = useRef<HTMLDivElement>()
   const [_bleed, setBleed] = useState({})
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const el = myRef?.current
     if (!el) { return }
     
