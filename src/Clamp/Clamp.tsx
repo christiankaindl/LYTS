@@ -13,6 +13,7 @@ export const clampStyles = styles
 
 /**
  * Clamps its children to a maximum length (horizontally and/or vertically) and centers them
+ * IDEA: Use CSS grid and provide a Clamp.Breakout component to render a full-width element inside the clamp
  */
 export const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
   children,
