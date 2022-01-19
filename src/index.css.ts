@@ -1,4 +1,4 @@
-import { createVar, fallbackVar, globalStyle, style } from "@vanilla-extract/css";
+import { createVar, globalStyle, style } from "@vanilla-extract/css";
 import { calc } from '@vanilla-extract/css-utils'
 
 export const vars = {
