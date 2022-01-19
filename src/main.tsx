@@ -1,7 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import ReactDOM from 'react-dom'
-import { Stack, Row, Clamp, Columns, Grid, Box } from './'
-import Breakout from './Breakout/Breakout'
+import { Stack, Row, Clamp, Columns, Grid, Box, Breakout } from './'
 import DebugProvider from './DebugProvider/DebugProvider'
 
 const App: FunctionComponent = function () {
