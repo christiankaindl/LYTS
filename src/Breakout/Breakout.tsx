@@ -9,7 +9,7 @@ import * as styles from './Breakout.css'
  * @see Clamp
  * @see Grid
  */
-const Breakout: FunctionComponent<BoxProps> = function ({ children, ...props }) {
+export const Breakout: FunctionComponent<BoxProps> = function ({ children, ...props }) {
   return (
     <Box
       {...props}
@@ -19,5 +19,3 @@ const Breakout: FunctionComponent<BoxProps> = function ({ children, ...props }) 
     </Box>
   )
 }
-
-export default Breakout
