@@ -37,6 +37,7 @@
     "react-dom": "^16.8 || ^17.0"
   },
   "devDependencies": {
+    "@radix-ui/colors": "^0.1.8",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
     "@vitejs/plugin-react": "^1.1.4",
