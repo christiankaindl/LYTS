@@ -1,21 +1,25 @@
 import { box } from '@lib/Box/Box.css'
-import { createVar, globalStyle, style } from '@vanilla-extract/css'
+import { vars } from '@lib/index.css'
+import { createVar, fallbackVar, globalStyle, style } from '@vanilla-extract/css'
 
 export const maxWidth = createVar('max-width')
 export const maxHeight = createVar('max-height')
 
-// Use grid here instead, and add a break-out addition
 export const clamp = style([
   box,
   {
-    alignItems: 'center',
-    justifyContent: 'center',
+    display: 'grid',
+    rowGap: fallbackVar(vars.gap, '1em'),
+    gridTemplateColumns: `1fr min(${fallbackVar(maxWidth, '100%')}, 100%) 1fr`,
+    // Only applies with a vertical clamp
+    alignItems: 'center'
   }
 ])
 
 globalStyle(`${clamp} > *`, {
-  maxWidth,
+  gridColumn: 2,
   maxHeight,
-  flexGrow: 1,
+  // Makes sure that the child of a vertical clamp spans the specified height
+  height: '100%',
   boxSizing: 'border-box'
 })
