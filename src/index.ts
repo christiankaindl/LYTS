@@ -7,5 +7,6 @@ export * from './Clamp/Clamp'
 export * from './Columns/Columns'
 export * from './Grid/Grid'
 export * from './Split/Split'
+export * from './Breakout/Breakout'
 
 // TODO: Export classNames object with all component classes
