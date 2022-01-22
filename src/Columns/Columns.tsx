@@ -27,10 +27,7 @@ type Ref = HTMLDivElement
 export const columnsStyles = styles ?? {}
 
 /**
- * Single axis columns.
- * Columns grow to fill the available space, and only wrap all-at-once when the `collapseAt` amount is reached. By default, all space is distributed equally among the columns.
- * 
- * You can customize the space distribution with the `ratio` prop.
+ * Extrinsic columns. Children fill the whole available space, and wrap all-at-once when the `collapseAt` value is reached. By default, all space is distributed equally among its children, but the space distribution can be customized with the `ratio` prop.
  */
 export const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
   children,

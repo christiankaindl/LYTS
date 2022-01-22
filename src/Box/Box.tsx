@@ -58,8 +58,7 @@ type Ref = HTMLDivElement
 export const boxStyles = styles ?? {}
 
 /**
- * TODO: Responsive props
- * Lowest common denominator
+ * Swiss-army knive. Use as a supercharged flexbox context, with convenience `xAlign`/`yAlign` props, `bleed` for visual alignment and `asChild` to customize the rendered element. Box is used by all other layout components under-the-hood.
  */
 const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Box ({
   children,

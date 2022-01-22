@@ -11,9 +11,7 @@ type Ref = HTMLDivElement
 export const splitStyles = styles ?? {}
 
 /**
- * Separates items along a single axis.
- *
- * Split takes no children and can be composed with both Stack and Row.
+ * Separates items along a single axis. Split takes no children, use as child of <Stack>, <Row> or any CSS flexbox context.
  */
 export const Split = React.forwardRef<Ref, SplitProps>(function Split ({
   children,

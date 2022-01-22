@@ -19,13 +19,9 @@ type Ref = HTMLDivElement
 export const clampStyles = styles ?? {}
 
 /**
- * Center-constrained children
- * 
- * Supports both horizontal clamping and vertical clamping.
- * 
- * You can also use <Breakout> as direct children to "break out" of the Clamp container, to the full width.
+ * Center-constrained children. Supports both horizontal and vertical clamping. You can also use <Breakout> within the Clamp to "opt out" individual children of the clamping and display them at full width.
  *
- * @see https://www.joshwcomeau.com/css/full-bleed/ for a detailed explanation of how Clamp and Breakout work.
+ * @see https://www.joshwcomeau.com/css/full-bleed/ for a detailed explanation of how Clamp and Breakout work internally.
  */
 export const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
   children,

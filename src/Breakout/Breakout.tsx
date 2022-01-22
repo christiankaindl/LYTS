@@ -5,9 +5,7 @@ import * as styles from './Breakout.css'
 export const breakoutStyles = styles ?? {}
 
 /**
- * Span the full row in a CSS Grid context
- * 
- * Use within a <Clamp> or <Grid> to make specific children full-width.
+ * Spans the full row in a CSS Grid context. Use within a <Clamp> or <Grid> to make it full-width.
  * 
  * @see Clamp
  * @see Grid

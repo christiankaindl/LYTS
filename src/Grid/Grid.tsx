@@ -15,7 +15,7 @@ type Ref = HTMLDivElement
 export const gridStyles = styles ?? {}
 
 /**
- * Responsive simple grid
+ * Responsive grid layout. A wrapper over CSS Grid with responsive defaults, but also fully customizable.
  */
 export const Grid = React.forwardRef<Ref, GridProps>(function Split ({
   children,
