@@ -24,7 +24,7 @@ export interface ColumnsProps extends BoxProps {
 }
 
 type Ref = HTMLDivElement
-export const columnsStyles = styles
+export const columnsStyles = styles ?? {}
 
 /**
  * Single axis columns.

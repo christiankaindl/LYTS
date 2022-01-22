@@ -12,7 +12,7 @@ export interface GridProps extends BoxProps {
 
 type Ref = HTMLDivElement
 
-export const gridStyles = styles
+export const gridStyles = styles ?? {}
 
 /**
  * Responsive simple grid

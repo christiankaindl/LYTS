@@ -8,7 +8,7 @@ export interface SplitProps extends BoxProps {
 
 type Ref = HTMLDivElement
 
-export const splitStyles = styles
+export const splitStyles = styles ?? {}
 
 /**
  * Separates items along a single axis.

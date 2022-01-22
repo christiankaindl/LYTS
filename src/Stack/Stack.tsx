@@ -19,7 +19,7 @@ export interface StackProps extends BoxProps<'column'> {
 
 type Ref = HTMLDivElement
 
-export const stackStyles = styles
+export const stackStyles = styles ?? {}
 
 export const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
   children,

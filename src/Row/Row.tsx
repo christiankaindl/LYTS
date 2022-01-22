@@ -25,7 +25,7 @@ export interface RowProps extends BoxProps {
 
 type Ref = HTMLDivElement
 
-export const rowStyles = styles
+export const rowStyles = styles ?? {}
 
 /**
  * Row automatically centers items by default

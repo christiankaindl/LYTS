@@ -16,7 +16,7 @@ export interface ClampProps extends BoxProps {
 }
 
 type Ref = HTMLDivElement
-export const clampStyles = styles
+export const clampStyles = styles ?? {}
 
 /**
  * Center-constrained children

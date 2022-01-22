@@ -55,7 +55,7 @@ export interface BoxProps<Direction = 'row'> extends React.HTMLAttributes<HTMLEl
 }
 
 type Ref = HTMLDivElement
-export const boxStyles = styles
+export const boxStyles = styles ?? {}
 
 /**
  * TODO: Responsive props

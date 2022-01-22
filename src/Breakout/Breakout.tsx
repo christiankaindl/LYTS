@@ -1,6 +1,9 @@
 import { FunctionComponent } from "react";
 import { Box, BoxProps } from "@lib/Box/Box";
 import * as styles from './Breakout.css'
+
+export const breakoutStyles = styles ?? {}
+
 /**
  * Span the full row in a CSS Grid context
  * 
