@@ -9,7 +9,9 @@
     "preview": "vite preview"
   },
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "tsconfig.json"
   ],
   "type": "module",
   "main": "./dist/lyts.umd.js",
