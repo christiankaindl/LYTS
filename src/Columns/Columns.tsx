@@ -27,7 +27,7 @@ type Ref = HTMLDivElement
 export const columnsStyles = styles ?? {}
 
 /**
- * Extrinsic columns. Children fill the whole available space, and wrap all-at-once when the `collapseAt` value is reached. By default, all space is distributed equally among its children, but the space distribution can be customized with the `ratio` prop.
+ * Extrinsicly sized columns, filling the whole available space and wrapping all-at-once when the `collapseAt` value is reached. Space distribution can be customized with the `ratio` prop.
  */
 export const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
   children,

@@ -22,7 +22,7 @@ type Ref = HTMLDivElement
 export const stackStyles = styles ?? {}
 
 /**
- * Vertical stack. Children take up the full width and are *stacked* on top of each other. Often Stack is nested within another Stack.
+ * Vertically stacked elements, taking up the full width by default. Best nested within other Stacks.
  */
 export const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
   children,

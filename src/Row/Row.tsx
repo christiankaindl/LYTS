@@ -28,7 +28,7 @@ type Ref = HTMLDivElement
 export const rowStyles = styles ?? {}
 
 /**
- * Horizontal stack. Children are start-aligned horizontally, with optional `wrap` and `expand` props. By default, all children are vertically centered.
+ * Horizontally stacked components, with convenience `wrap` and `expand` props. By default, all children are vertically centered and horizontally start-aligned.
  */
 export const Row = React.forwardRef<Ref, RowProps>(function Row ({
   children,
