@@ -4,7 +4,7 @@ import { vars } from "@lib/index.css";
 import { Slot } from "@radix-ui/react-slot";
 import useMergedRef from "@react-hook/merged-ref";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { CSSProperties, forwardRef, useLayoutEffect, useRef, useState } from "react";
+import { CSSProperties, forwardRef, useRef, useState } from "react";
 import * as styles from './Box.css'
 
 export interface BoxProps<Direction = 'row'> extends React.HTMLAttributes<HTMLElement> {
@@ -58,7 +58,7 @@ type Ref = HTMLDivElement
 export const boxStyles = styles ?? {}
 
 /**
- * Swiss-army knive. Use as a supercharged flexbox context, with convenience `xAlign`/`yAlign` props, `bleed` for visual alignment and `asChild` to customize the rendered element. Box is used by all other layout components under-the-hood.
+ * Generic flexbox context with convenience props such as `xAlign`/`yAlign`for general alignment, `bleed` for visual alignment and `asChild` to customize the rendered element.
  */
 const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Box ({
   children,
