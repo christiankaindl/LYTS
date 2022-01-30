@@ -26,7 +26,6 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^0.1.2",
-    "@react-hook/merged-ref": "^1.3.2",
     "@vanilla-extract/dynamic": "^2.0.2"
   },
   "peerDependencies": {
