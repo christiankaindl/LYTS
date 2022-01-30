@@ -60,7 +60,7 @@ export const boxStyles = styles ?? {}
 /**
  * Generic flexbox context with convenience props such as `xAlign`/`yAlign`for general alignment, `bleed` for visual alignment and `asChild` to customize the rendered element.
  */
-const Box = forwardRef<Ref, BoxProps & JSX.IntrinsicElements['div']>(function Box ({
+const Box = forwardRef<Ref, BoxProps>(function Box ({
   children,
   gap = '1em',
   asChild = false,
