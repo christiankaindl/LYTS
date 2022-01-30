@@ -1,10 +1,8 @@
 import { useAlign } from "@lib/hooks/useAlign";
-import useIsomorphicLayoutEffect from "@lib/hooks/useIsomorphicLayoutEffect";
 import { vars } from "@lib/index.css";
 import { Slot } from "@radix-ui/react-slot";
-import useMergedRef from "@react-hook/merged-ref";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { CSSProperties, forwardRef, useRef, useState } from "react";
+import { CSSProperties, forwardRef } from "react";
 import * as styles from './Box.css'
 
 export interface BoxProps<Direction = 'row'> extends React.HTMLAttributes<HTMLElement> {
@@ -25,7 +23,7 @@ export interface BoxProps<Direction = 'row'> extends React.HTMLAttributes<HTMLEl
   /** Alias for the CSS `flex-direction` property */
   orientation?: 'row' | 'column'
   /** Visually break out of the parent's box. Useful for visually aligning e.g. transparent buttons */
-  bleed?: CSSProperties['padding']
+  bleed?: string | number
   /** Top `bleed` value @see bleed */
   bleedTop?: CSSProperties['padding']
   /** Right `bleed` value @see bleed */
@@ -78,49 +76,28 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
   const Comp = asChild ? Slot : 'div';
   const align = useAlign(orientation, xAlign, yAlign)
 
-  const myRef = useRef<HTMLDivElement>()
-  const [_bleed, setBleed] = useState({})
-  useIsomorphicLayoutEffect(() => {
-    const el = myRef?.current
-    if (!el) { return }
-    
-    // Could do simple parsing instead (`bleed.split(' ')`)
-    bleed && (el.style.margin = String(bleed))
-    bleedTop && (el.style.marginTop = String(bleedTop))
-    bleedRight && (el.style.marginRight = String(bleedRight))
-    bleedBottom && (el.style.marginBottom = String(bleedBottom))
-    bleedLeft && (el.style.marginLeft = String(bleedLeft))
-
-    setBleed({
-      [vars.bleedTop]: el.style['marginTop'] || 0,
-      [vars.bleedRight]: el.style['marginRight'] || 0,
-      [vars.bleedBottom]: el.style['marginBottom'] || 0,
-      [vars.bleedLeft]: el.style['marginLeft'] || 0
-    })
-
-    // FIXME: Don't reset margin if no bleed was provided
-    // Or at least log an error
-    el.style.marginTop = ''
-    el.style.marginRight = ''
-    el.style.marginBottom = ''
-    el.style.marginLeft = ''
-  }, [myRef?.current, bleed, bleedLeft, bleedRight, bleedBottom, bleedTop])
-
+  if (typeof bleed === 'number') {
+    bleed = `${bleed}px`
+  }
+  const _bleed = bleed ? bleed.split(' ') : []
   const _gap = typeof gap === 'number' ? `${gap}em` : gap
+
   return (
     <Comp
       {...props}
-      // @ts-expect-error
-      ref={useMergedRef(ref, myRef)}
+      ref={ref}
       className={`${styles.box} ${props.className ?? ''}`}
       style={{
         ...style,
         ...assignInlineVars({
           [vars.gap]: _gap,
+          [vars.bleedTop]: toCssValue(bleedTop ?? _bleed?.[0] ?? 0),
+          [vars.bleedRight]: toCssValue(bleedRight ?? _bleed?.[1] ?? _bleed?.[0] ?? 0),
+          [vars.bleedBottom]: toCssValue(bleedBottom ?? _bleed?.[2] ?? _bleed?.[0] ?? 0),
+          [vars.bleedLeft]: toCssValue(bleedLeft ?? _bleed?.[3] ?? _bleed?.[1] ?? _bleed?.[0] ?? 0),
           [styles.vars.justifyContent]: align.justifyContent,
           [styles.vars.alignItems]: align.alignItems,
-          [styles.vars.flexDirection]: align.flexDirection,
-          ..._bleed
+          [styles.vars.flexDirection]: align.flexDirection
         })
       }}
     >
@@ -132,3 +109,7 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
 export { Box }
 
 export default Box
+
+function toCssValue (value: string | number) {
+  return typeof value === 'number' ? `${value}px` : value
+}
