@@ -111,5 +111,5 @@ export { Box }
 export default Box
 
 function toCssValue (value: string | number) {
-  return typeof value === 'number' ? `${value}px` : value
+  return (typeof value === 'number' || value === '0') ? `${value}px` : value
 }
