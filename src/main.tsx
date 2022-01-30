@@ -8,7 +8,7 @@ const App: FunctionComponent = function () {
     <Stack gap={1.5} style={{ padding: 30 }}>
       <DebugProvider>
         <Stack xAlign='end'>
-          <Box>Item 1</Box>
+          <Box bleed='5px 0'>Item 1</Box>
           <Box>Item 2</Box>
           <Box bleedRight='20px' style={{ border: '1px solid black' }}>
             <Box>Box child</Box>
@@ -61,6 +61,12 @@ const App: FunctionComponent = function () {
         <hr />
         <p>Default Columns</p>
         <Columns>
+          <Box>Item 1</Box>
+          <Box>Item 2</Box>
+          <Box>Item 3</Box>
+        </Columns>
+        <p>Columns with custom ratio</p>
+        <Columns ratio='1/3/1'>
           <Box>Item 1</Box>
           <Box>Item 2</Box>
           <Box>Item 3</Box>
