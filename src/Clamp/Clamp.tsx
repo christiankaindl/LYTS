@@ -19,7 +19,7 @@ type Ref = HTMLDivElement
 export const clampStyles = styles ?? {}
 
 /**
- * Center-constrained component, supporting both horizontal and vertical clamping. Individual children can "opt out" of the clamping with the <Breakout> component.
+ * Center-constrained component, supporting both horizontal and vertical clamping. Individual children can "opt out" of the clamping with the `<Breakout>` component.
  *
  * @see https://www.joshwcomeau.com/css/full-bleed/ for a detailed explanation of how Clamp and Breakout work internally.
  */
