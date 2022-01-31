@@ -5,6 +5,7 @@ import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { CSSProperties, forwardRef } from "react";
 import * as styles from './Box.css'
 
+// TODO: Add `inline` prop?
 export interface BoxProps<Direction = 'row'> extends React.HTMLAttributes<HTMLElement> {
   /**
    * Amount of space between elements. Same as CSS' `gap`.
