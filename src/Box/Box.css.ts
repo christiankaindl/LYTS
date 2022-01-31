@@ -12,5 +12,8 @@ export const box = style([
   bleed,
   {
     display: 'flex',
-    ...vars
+    ...vars,
+    // Make sure horizontal alignment also applies to Grid elements (like Clamp and Grid)
+    // `justifyItems` does nothing in flexbox contexts
+    justifyItems: vars.justifyContent
   }])

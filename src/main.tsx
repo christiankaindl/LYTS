@@ -42,6 +42,11 @@ const App: FunctionComponent = function () {
           <Box>Child #1</Box>
           <Box>Child #2</Box>
         </Clamp>
+        <p>Clamp with xAlign='center'</p>
+        <Clamp clamp='750px' xAlign='center'>
+          <Box>Child #1</Box>
+          <Box>Child #2</Box>
+        </Clamp>
         <p>Clamp with Breakout</p>
         <Clamp clamp='750px' gap={2}>
           <Box>Child #1</Box>
