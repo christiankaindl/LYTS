@@ -22,7 +22,5 @@ export const clamp = style([
 globalStyle(`${clamp} > *`, {
   gridColumn: 2,
   maxHeight,
-  // Make sure that the child of a vertical clamp spans the specified height
-  height: '100%',
   boxSizing: 'border-box'
 })
