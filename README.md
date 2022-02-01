@@ -4,23 +4,27 @@
   <p>Layout primitives for React.</p>
 </div>
 
-- Easy layouting - Powerful primitives for every type of layout
-- Composable - Combine to create complex layouts
-- Familiar - Apply standard CSS flexbox and grid knowledge
+# LYTS
 
-# Installation
+A set of layout primitives to build any kind of layout with useful props like `bleed`, `asChild` and `xAlign`/`yAlign`. Components are unstyled so you can use the styling solution of your choice, like vanilla-extract, Stitches or emotion. LYTS can be adopted gradually and works with any framework or library setup.
+
+- Drop-in: Use as much or as little as you need
+- Composable: Combine to create complex layouts
+- Familiar: Apply standard CSS flexbox and grid knowledge
+
+**[Documentation](https://lyts.christiankaindl.com)**: https://lyts.christiankaindl.com
+
+## Installation
 
 ```sh
 npm install @christiankaindl/lyts
 ```
 
-# Usage
-
-Import the library CSS styles early in your application. For example in a Next.js app, import in `_app.js`:
+After intallation, import the necessary CSS styles into your application. For example in a Next.js app, import them in `_app.js`:
 
 ```jsx
-/** _app.js */
-import '@christiankaindl/lyts/style.css'
+/* _app.js */
+import '@christiankaindl/lyts/style.css' // Import the library styles here
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
@@ -29,61 +33,32 @@ function MyApp({ Component, pageProps }) {
 export default MyApp
 ```
 
-That's it! Now import one of the available components--Stack, Row, Clamp, Columns, Grid--and use them to get nice and consistent layouts.
+And that's all there is to set up! Now import one of the base components—<a href='https://lyts.christiankaindl.com/components/stack'>Stack</a>, <a href='https://lyts.christiankaindl.com/components/row'>Row</a>, <a href='https://lyts.christiankaindl.com/components/clamp'>Clamp</a>, <a href='https://lyts.christiankaindl.com/components/columns'>Columns</a>, <a href='https://lyts.christiankaindl.com/components/grid'>Grid</a>—and start building great layouts.
 
-Each layout component manages its direct children, for example the following creats a vertical layout (for example a blog post) with 1em spacing (the default) between elements:
+## Usage
 
-```html
-<Stack gap={1}>
-  <h1>Very interesting article</h1>
-  <p>Very short abstract</p>
-  <p>Awesome content</p>
-</Stack>
-```
-Stack also automatically removes any default margin of its direct children, which may have been added by the browser.
+Layout components can be composed until you achieve your desired layout. For example, The following \<CenterCard> component renders a card with a max-width of 400px, centers it and uses a <a href='https://lyts.christiankaindl.com/components/stack'>Stack</a> to get consistent spacing:
 
-You can also nest layout components to create more complex layouts:
+![image]()
 
-```html
-<Stack asChild>
-  <article>
-    <h1>Very interesting article</h1>
-    <Row>
-      <time pubdate datetime="2021-11-18">Published 2021-11-18</time>
-      <span>Example</span>
-      <span>Docs</span>
-    </Row>
-    <p>Very short abstract</p>
-    <p>Awesome content</p>
-  </article>
-</Stack>
-```
-The nested \<Row> adds a horizontal stack with the post's metadata. Also we now use the semantic article element as the wrapper component (Stack renders **NO** additional element) by specifying the `asChild` prop.
-
-In addition to the `gap` and `asChild` props, all components also support the following props:
-
-- `xAlign`/`yAlign`: Control vertical (y) or horizontal (x) alignment.
-- `bleed`: Sets negative margin on an element. Useful for visually aligning elements such as "ghost" buttons.
-
-Compose layout components until you get your desired outcome:
-
-```tsx
+```jsx
 const CenterCard: FunctionComponent = function () {
   return (
-    // A card with a max-width of 750px and centers it
-    <Clamp clamp='750px'>
+    // A card with clamped 400px and centered
+    <Clamp clamp='400px'>
       <Stack gap={0.75} className='card'>
-        <img src='' />
         <h3>Card title</h3>
-        <Row wrap gap={0.5}>
-          <InfoIcon />
-          <p>Info: This is a card</p>
-        </Row>
-        <Box xAlign='end'>Aligned to the right</Box>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </Stack>
     </Clamp>
   )
 }
 ```
 
-Full docs with API and examples are coming soon.
+Check out the <a href='https://lyts.christiankaindl.com/examples'>Examples</a> page for a comprehensive collection of layouts and how to build them with LYTS.
+
+A real-world example using LYTS is this documentation site, which makes extensive use of all components. [Check out the code here](https://github.com/christiankaindl/LYTS-website/)!
+
+## Support & help
+
+If you get stuck, [reach out to @christiankaindl](https://twitter.com/christiankaindl) on Twitter. In case of bugs, [open an issue on GitHub](https://github.com/christiankaindl/LYTS/issues).
