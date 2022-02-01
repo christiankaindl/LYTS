@@ -13,7 +13,7 @@ export const box = style([
   {
     display: 'flex',
     ...vars,
-    // Make sure horizontal alignment also applies to Grid elements (like Clamp and Grid)
+    // Make sure horizontal alignment is applied to Grid elements (like Clamp and Grid)
     // `justifyItems` does nothing in flexbox contexts
     justifyItems: vars.justifyContent
   }])

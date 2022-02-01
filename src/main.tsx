@@ -56,12 +56,17 @@ const App: FunctionComponent = function () {
           <Box>Child #3</Box>
         </Clamp>
         <p>Clamp with horizontal and vertical clamping</p>
-        <Clamp clamp={['750px', '200px']} gap={2} style={{ height: 400 }}>
-          <Box>Child #1</Box>
+        <Clamp clamp={['300px', '200px']} gap={2} style={{ height: 400 }}>
+          <Box style={{ height: '100%' }}>Child #1</Box>
         </Clamp>
         <p>Clamp with only vertical clamping</p>
         <Clamp clamp={[null, '200px']} gap={2} style={{ height: 400 }}>
+          <Box style={{ height: '100%' }}>Child #1</Box>
+        </Clamp>
+        <p>Clamp with yAlign</p>
+        <Clamp clamp={'300px'} yAlign='center' style={{ height: 400 }}>
           <Box>Child #1</Box>
+          <Box>Child #2</Box>
         </Clamp>
         <hr />
         <p>Default Columns</p>
