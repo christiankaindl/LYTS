@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "author": "Christian Kaindl",
   "license": "MIT",
+  "homepage": "https://lyts.christiankaindl.com",
+  "bugs": "https://github.com/christiankaindl/LYTS/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christiankaindl/LYTS.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
