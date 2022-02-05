@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import ReactDOM from 'react-dom'
-import { Stack, Row, Clamp, Columns, Grid, Box, Breakout } from './'
+import { Stack, Row, Clamp, Columns, Grid, Box, Breakout, Split } from './'
 import DebugProvider from './DebugProvider/DebugProvider'
 
 const App: FunctionComponent = function () {
@@ -34,6 +34,12 @@ const App: FunctionComponent = function () {
         <Row xAlign='space-between'>
           <Box>Item 1</Box>
           <Box>Item 2</Box>
+          <Box>Item 3</Box>
+        </Row>
+        <p>Row with Split</p>
+        <Row xAlign='space-between'>
+          <Box>Item 1</Box>
+          <Split />
           <Box>Item 3</Box>
         </Row>
         <hr />
