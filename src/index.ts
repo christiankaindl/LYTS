@@ -9,4 +9,4 @@ export * from './Grid/Grid'
 export * from './Split/Split'
 export * from './Breakout/Breakout'
 
-// TODO: Export classNames object with all component classes
+export { toSelectorString } from './utils/toSelectorString'
