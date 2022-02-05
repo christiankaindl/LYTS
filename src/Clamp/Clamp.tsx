@@ -12,7 +12,6 @@ export interface ClampProps extends BoxProps {
    * Note: When vertical clamping is used, only a single direct child is supported.
    */
   clamp: string | [maxWidth: string | null, maxHeight: string]
-  children: React.ReactNode
 }
 
 type Ref = HTMLDivElement

@@ -20,7 +20,6 @@ export interface RowProps extends BoxProps {
    * @see `ratio` in Columns props
    */
   expandChildren?: boolean | string
-  children: React.ReactNode
 }
 
 type Ref = HTMLDivElement

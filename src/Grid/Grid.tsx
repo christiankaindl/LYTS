@@ -7,7 +7,6 @@ export interface GridProps extends BoxProps {
   gridItemMinWidth?: string
   /** TODO: Different columns API? See https://css-tricks.com/responsive-layouts-fewer-media-queries/ */
   gridMaxRowItems?: number
-  children: React.ReactNode
 }
 
 type Ref = HTMLDivElement
