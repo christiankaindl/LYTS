@@ -15,11 +15,9 @@ Layout primitives to build any kind of layout with useful props like `bleed`, `a
 
 ## Docs
 
-https://lyts.christiankaindl.com
+**https://lyts.christiankaindl.com**
 
-⚛️ [Components](https://lyts.christiankaindl.com/components)
-📚 [Guides](https://lyts.christiankaindl.com/guides)
-📖 [Examples](https://lyts.christiankaindl.com/examples)
+⚛️ [Components](https://lyts.christiankaindl.com/components) · 📚 [Guides](https://lyts.christiankaindl.com/guides) · 📖 [Examples](https://lyts.christiankaindl.com/examples)
 
 ## Installation
 
