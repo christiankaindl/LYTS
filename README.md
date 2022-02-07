@@ -6,13 +6,20 @@
 
 # LYTS
 
-A set of layout primitives to build any kind of layout with useful props like `bleed`, `asChild` and `xAlign`/`yAlign`. Components are unstyled so you can use the styling solution of your choice, like vanilla-extract, Stitches or emotion. LYTS can be adopted gradually and works with any framework or library setup.
+Layout primitives to build any kind of layout with useful props like `bleed`, `asChild` and `xAlign`/`yAlign`.
 
-- Drop-in: Use as much or as little as you need
-- Composable: Combine to create complex layouts
-- Familiar: Apply standard CSS flexbox and grid knowledge
+- **Composable** – Combine to create complex layouts
+- **Small bundle** – 4kB when using *all* exports
+- **Unstyled** – Use the styling solution of your choice
+- **Layout props** – Simple, productive API
 
-**[Documentation](https://lyts.christiankaindl.com)**: https://lyts.christiankaindl.com
+## Docs
+
+https://lyts.christiankaindl.com
+
+⚛️ [Components](https://lyts.christiankaindl.com/components)
+📚 [Guides](https://lyts.christiankaindl.com/guides)
+📖 [Examples](https://lyts.christiankaindl.com/examples)
 
 ## Installation
 
