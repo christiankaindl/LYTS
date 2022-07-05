@@ -60,7 +60,7 @@ export const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
                 ...assignInlineVars({
                   [styles.flexGrow]: typeof ratios === 'string'
                     ? ratios
-                    : ratios?.[index] ?? '1'
+                    : (ratios?.[index] || '1')
                 })
               }
             })

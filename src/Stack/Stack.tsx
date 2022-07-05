@@ -49,7 +49,7 @@ export const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
                 ...assignInlineVars({
                   [styles.flexGrow]: typeof ratios === 'string'
                       ? ratios
-                      : ratios?.[index] ?? '0'
+                      : (ratios?.[index] || '0')
                 })
               }
             })
