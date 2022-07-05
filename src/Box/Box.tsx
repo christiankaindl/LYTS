@@ -61,7 +61,7 @@ export const boxStyles = styles ?? {}
  */
 const Box = forwardRef<Ref, BoxProps>(function Box ({
   children,
-  gap = '1em',
+  gap,
   asChild = false,
   bleed,
   bleedTop,
@@ -69,7 +69,7 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
   bleedBottom,
   bleedLeft,
   style = {},
-  orientation = 'row',
+  orientation = 'row', // TODO: Default to "column", which aligns better with the behavior of a regular div element
   xAlign = 'initial',
   yAlign = 'initial',
   ...props
@@ -81,7 +81,24 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
     bleed = `${bleed}px`
   }
   const _bleed = bleed ? bleed.split(' ') : []
+  bleedTop = bleedTop ?? _bleed?.[0]
+  bleedRight = bleedRight ?? _bleed?.[1] ?? _bleed?.[0]
+  bleedBottom = bleedBottom ?? _bleed?.[2] ?? _bleed?.[0]
+  bleedLeft = bleedLeft ?? _bleed?.[3] ?? _bleed?.[1] ?? _bleed?.[0]
+
   const _gap = typeof gap === 'number' ? `${gap}em` : gap
+
+  // Only set Create an object that only contains properties which are set
+  const inlineVars = Object.assign({},
+    gap && { [vars.gap]: _gap },
+    bleedTop && { [vars.bleedTop]: toCssValue(bleedTop) },
+    bleedRight && { [vars.bleedRight]: toCssValue(bleedRight) },
+    bleedBottom && { [vars.bleedBottom]: toCssValue(bleedBottom) },
+    bleedLeft && { [vars.bleedLeft]: toCssValue(bleedLeft) },
+    align.justifyContent !== 'initial' && { [styles.vars.justifyContent]: align.justifyContent },
+    align.alignItems !== 'initial' && { [styles.vars.alignItems]: align.alignItems },
+    align.flexDirection !== 'row' && { [styles.vars.flexDirection]: align.flexDirection }
+  )
 
   return (
     <Comp
@@ -90,16 +107,7 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
       className={`${styles.box} ${props.className ?? ''}`}
       style={{
         ...style,
-        ...assignInlineVars({
-          [vars.gap]: _gap,
-          [vars.bleedTop]: toCssValue(bleedTop ?? _bleed?.[0] ?? 0),
-          [vars.bleedRight]: toCssValue(bleedRight ?? _bleed?.[1] ?? _bleed?.[0] ?? 0),
-          [vars.bleedBottom]: toCssValue(bleedBottom ?? _bleed?.[2] ?? _bleed?.[0] ?? 0),
-          [vars.bleedLeft]: toCssValue(bleedLeft ?? _bleed?.[3] ?? _bleed?.[1] ?? _bleed?.[0] ?? 0),
-          [styles.vars.justifyContent]: align.justifyContent,
-          [styles.vars.alignItems]: align.alignItems,
-          [styles.vars.flexDirection]: align.flexDirection
-        })
+        ...assignInlineVars(inlineVars)
       }}
     >
       {children}

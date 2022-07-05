@@ -7,7 +7,7 @@ const App: FunctionComponent = function () {
   return (
     <Stack gap={1.5} style={{ padding: 30 }}>
       <DebugProvider>
-        <Stack xAlign='end'>
+        <Stack xAlign='end' gap={2}>
           <Box bleed='5px 0'>Item 1</Box>
           <Box>Item 2</Box>
           <Box bleedRight='20px' style={{ border: '1px solid black' }}>

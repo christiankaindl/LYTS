@@ -7,8 +7,6 @@ export const flexGrow = createVar('flex-grow')
 export const row = style([
   box,
   {
-    // TODO: Move `gap` to Box?
-    gap: fallbackVar(vars.gap, '1em'),
     flexWrap: vars.wrap,
   }
 ])

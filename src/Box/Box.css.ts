@@ -1,4 +1,4 @@
-import { bleed, lyts } from "@lib/index.css";
+import { bleed, lyts, vars as indexVars } from "@lib/index.css";
 import { createVar, style } from "@vanilla-extract/css";
 
 export const vars = {
@@ -12,7 +12,14 @@ export const box = style([
   bleed,
   {
     display: 'flex',
+    gap: indexVars.gap,
     ...vars,
+    vars: {
+      [indexVars.gap]: '1em',
+      [vars.alignItems]: 'initial',
+      [vars.justifyContent]: 'initial',
+      [vars.flexDirection]: 'row'
+    },
     // Make sure horizontal alignment is applied to Grid elements (like Clamp and Grid)
     // `justifyItems` does nothing in flexbox contexts
     justifyItems: vars.justifyContent
