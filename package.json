@@ -35,8 +35,8 @@
     "@vanilla-extract/dynamic": "^2.0.2"
   },
   "peerDependencies": {
-    "react": "^16.8 || ^17.0",
-    "react-dom": "^16.8 || ^17.0"
+    "react": "^16.8 || ^17.0 || ^18.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0"
   },
   "devDependencies": {
     "@vanilla-extract/css": "^1.6.8",
