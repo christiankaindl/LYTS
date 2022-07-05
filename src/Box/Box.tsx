@@ -69,7 +69,7 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
   bleedBottom,
   bleedLeft,
   style = {},
-  orientation = 'row', // TODO: Default to "column", which aligns better with the behavior of a regular div element
+  orientation = 'column',
   xAlign = 'initial',
   yAlign = 'initial',
   ...props
@@ -95,7 +95,7 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
     bleedLeft && { [vars.bleedLeft]: toCssValue(bleedLeft) },
     align.justifyContent !== 'initial' && { [styles.vars.justifyContent]: align.justifyContent },
     align.alignItems !== 'initial' && { [styles.vars.alignItems]: align.alignItems },
-    align.flexDirection !== 'row' && { [styles.vars.flexDirection]: align.flexDirection }
+    align.flexDirection !== 'column' && { [styles.vars.flexDirection]: align.flexDirection }
   )
 
   return (

@@ -18,7 +18,7 @@ export const box = style([
       [vars.gap]: '1em',
       [vars.alignItems]: 'initial',
       [vars.justifyContent]: 'initial',
-      [vars.flexDirection]: 'row',
+      [vars.flexDirection]: 'column',
       [indexVars.bleedTop]: '0',
       [indexVars.bleedRight]: '0',
       [indexVars.bleedBottom]: '0',

@@ -10,7 +10,7 @@ const App: FunctionComponent = function () {
         <Stack xAlign='end' gap={2}>
           <Box bleed='10px 0'>Item 1</Box>
           <Box>Item 2</Box>
-          <Box bleedRight='20px' style={{ border: '1px solid black' }}>
+          <Box bleedRight='20px' orientation='row' style={{ border: '1px solid black' }}>
             <Box>Box child</Box>
             <Box bleedTop='10px' style={{ border: '1px solid black' }}>
               Nested box child
