@@ -44,7 +44,7 @@ const App: FunctionComponent = function () {
         </Row>
         <hr />
         <p>Default Clamp</p>
-        <Clamp clamp='750px'>
+        <Clamp clamp='750px' gap={2}>
           <Box>Child #1</Box>
           <Box>Child #2</Box>
         </Clamp>
