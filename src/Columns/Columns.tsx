@@ -46,6 +46,7 @@ export const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
           [styles.collapseAt]: collapseAt
         })
       }}
+      orientation='row'
     >
       {ratios === undefined
         ? children

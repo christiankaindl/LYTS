@@ -48,6 +48,7 @@ export const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
           ...(clampHeight && { [styles.maxHeight]: clampHeight })
         })
       }}
+      orientation='row'
     >
       {children}
     </Box>

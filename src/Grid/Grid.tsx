@@ -35,6 +35,7 @@ export const Grid = React.forwardRef<Ref, GridProps>(function Split ({
           [styles.gridMaxRowItems]: (gridMaxRowItems && String(gridMaxRowItems)) || String(Children.count(children))
         })
       }}
+      orientation='row'
     >
       {children}
     </Box>

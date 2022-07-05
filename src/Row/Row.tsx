@@ -55,10 +55,11 @@ export const Row = React.forwardRef<Ref, RowProps>(function Row ({
         })
       }}
       yAlign={yAlign}
+      orientation='row'
     >
       {ratios === undefined
         ? children
-        // TODO: Only need to map the children like this is expandChildren is a string.
+        // TODO: Only need to map the children like this if expandChildren is a string.
         : Children.map(children, (child, index) => {
           if (!child) return null
           if (!isValidElement(child)) return child
