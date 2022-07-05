@@ -1,0 +1,6 @@
+- Add new `clamp` prop to Stack, Row and Columns out-of-the-box. If yes, then that would automatically wrap them in Clamp
+- Columns "auto" keyword?
+- Columns "/"-syntax confusing?
+- Columns "style"-forwarding example would be good
+- Columns xAlign doesn't do anything? (only has effect on mobile)
+- Merge Columns and Row into one?
