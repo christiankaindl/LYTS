@@ -86,11 +86,9 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
   bleedBottom = bleedBottom ?? _bleed?.[2] ?? _bleed?.[0]
   bleedLeft = bleedLeft ?? _bleed?.[3] ?? _bleed?.[1] ?? _bleed?.[0]
 
-  const _gap = typeof gap === 'number' ? `${gap}em` : gap
-
   // Only set Create an object that only contains properties which are set
   const inlineVars = Object.assign({},
-    gap && { [vars.gap]: _gap },
+    gap && { [styles.vars.gap]: typeof gap === 'number' ? `${gap}em` : gap },
     bleedTop && { [vars.bleedTop]: toCssValue(bleedTop) },
     bleedRight && { [vars.bleedRight]: toCssValue(bleedRight) },
     bleedBottom && { [vars.bleedBottom]: toCssValue(bleedBottom) },
