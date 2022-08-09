@@ -24,6 +24,12 @@ const App: FunctionComponent = function () {
           <Box>Item 2</Box>
           <Box>Item 3</Box>
         </Row>
+        <p>Row `gap=0`</p>
+        <Row gap={0}>
+          <Box>Item 1</Box>
+          <Box>Item 2</Box>
+          <Box>Item 3</Box>
+        </Row>
         <p>Row with expandChildren</p>
         <Row expandChildren>
           <Box>Item 1</Box>
