@@ -1,7 +1,6 @@
 import React, { Children, cloneElement, CSSProperties, isValidElement } from 'react'
 import * as styles from './Row.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
-import { vars } from '../index.css'
 import Box, { BoxProps } from '@lib/Box/Box'
 import { useRatio } from '@lib/useRatio'
 
@@ -51,7 +50,7 @@ export const Row = React.forwardRef<Ref, RowProps>(function Row ({
       style={{
         ...style,
         ...assignInlineVars({
-          [vars.wrap]: wrap
+          [styles.wrap]: wrap
         })
       }}
       yAlign={yAlign}

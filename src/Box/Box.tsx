@@ -1,5 +1,4 @@
 import { useAlign } from "@lib/hooks/useAlign";
-import { vars } from "@lib/index.css";
 import { Slot } from "@radix-ui/react-slot";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
 import { CSSProperties, forwardRef } from "react";
@@ -89,10 +88,10 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
   // Only set Create an object that only contains properties which are set
   const inlineVars = Object.assign({},
     gap !== undefined && { [styles.vars.gap]: typeof gap === 'number' ? `${gap}em` : gap },
-    bleedTop && { [vars.bleedTop]: toCssValue(bleedTop) },
-    bleedRight && { [vars.bleedRight]: toCssValue(bleedRight) },
-    bleedBottom && { [vars.bleedBottom]: toCssValue(bleedBottom) },
-    bleedLeft && { [vars.bleedLeft]: toCssValue(bleedLeft) },
+    bleedTop && { [styles.vars.bleedTop]: toCssValue(bleedTop) },
+    bleedRight && { [styles.vars.bleedRight]: toCssValue(bleedRight) },
+    bleedBottom && { [styles.vars.bleedBottom]: toCssValue(bleedBottom) },
+    bleedLeft && { [styles.vars.bleedLeft]: toCssValue(bleedLeft) },
     align.justifyContent !== 'initial' && { [styles.vars.justifyContent]: align.justifyContent },
     align.alignItems !== 'initial' && { [styles.vars.alignItems]: align.alignItems },
     align.flexDirection !== 'column' && { [styles.vars.flexDirection]: align.flexDirection }
