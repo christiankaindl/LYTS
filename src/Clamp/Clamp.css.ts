@@ -1,4 +1,3 @@
-import { box } from '@lib/Box/Box.css'
 import { createVar, fallbackVar, globalStyle, style } from '@vanilla-extract/css'
 
 export const maxWidth = createVar('max-width')
@@ -10,16 +9,13 @@ export const maxHeight = createVar('max-height')
 
 //       But that would (I think) also mean that Clamp can't support the `gap` prop anymore, as it has to be 0 (or otherwise it grows too large)
 //       A workaround for this could be to dynamically replace "100%" with a calc: "1fr min(${fallbackVar(maxWidth, '100%')}, calc(100% - ${gap}*2)) 1fr"
-export const clamp = style([
-  box,
-  {
-    display: 'grid',
-    gridTemplateColumns: `1fr min(${fallbackVar(maxWidth, '100%')}, 100%) 1fr`,
-    columnGap: 0, // Update when uni-directional clamping is implemented
-    // Only applies when the container has an explicit height, or vertical clamping is used
-    alignItems: 'center'
-  }
-])
+export const clamp = style({
+  display: 'grid',
+  gridTemplateColumns: `1fr min(${fallbackVar(maxWidth, '100%')}, 100%) 1fr`,
+  columnGap: 0, // Update when uni-directional clamping is implemented
+  // Only applies when the container has an explicit height, or vertical clamping is used
+  alignItems: 'center'
+})
 
 globalStyle(`${clamp} > *`, {
   gridColumn: 2,
