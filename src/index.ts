@@ -54,6 +54,8 @@ export function checkFlexGapSupport(autoSet = true) {
   if (!isSupported && autoSet) {
     document.body.classList.add(legacyGapEnabled)
     console.info('[LYTS] Legacy gap fallback mode is used. Some features may not work 100% correctly.')
+  } else {
+    document.body.classList.remove(legacyGapEnabled)
   }
   
 	return isSupported
