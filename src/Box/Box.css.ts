@@ -18,7 +18,7 @@ export const box = style({
   ...vars,
   // Set default values so that values don't propagate beyond the element where props are applied, making it possible to reduce the amount of inline CSS variables
   vars: {
-    [vars.gap]: '1em',
+    [vars.gap]: '1rem',
     [vars.alignItems]: 'initial',
     [vars.justifyContent]: 'initial',
     [vars.flexDirection]: 'column',
