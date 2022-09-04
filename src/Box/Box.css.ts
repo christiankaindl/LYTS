@@ -22,10 +22,10 @@ export const box = style({
     [vars.alignItems]: 'initial',
     [vars.justifyContent]: 'initial',
     [vars.flexDirection]: 'column',
-    [vars.bleedTop]: '0',
-    [vars.bleedRight]: '0',
-    [vars.bleedBottom]: '0',
-    [vars.bleedLeft]: '0'
+    [vars.bleedTop]: '0px',
+    [vars.bleedRight]: '0px',
+    [vars.bleedBottom]: '0px',
+    [vars.bleedLeft]: '0px'
   },
   // Make sure horizontal alignment is applied to Grid elements (like Clamp and Grid)
   // `justifyItems` does nothing in flexbox contexts
