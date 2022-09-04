@@ -15,7 +15,6 @@ export const vars = {
 
 export const box = style({
   display: 'flex',
-  ...vars,
   // Set default values so that values don't propagate beyond the element where props are applied, making it possible to reduce the amount of inline CSS variables
   vars: {
     [vars.gap]: '1rem',
@@ -27,6 +26,10 @@ export const box = style({
     [vars.bleedBottom]: '0px',
     [vars.bleedLeft]: '0px'
   },
+  gap: vars.gap,
+  alignItems: vars.alignItems,
+  justifyContent: vars.justifyContent,
+  flexDirection: vars.flexDirection,
   // Make sure horizontal alignment is applied to Grid elements (like Clamp and Grid)
   // `justifyItems` does nothing in flexbox contexts
   justifyItems: vars.justifyContent,
