@@ -31,7 +31,7 @@
     }
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^0.1.2",
+    "@radix-ui/react-slot": "^1.0.0",
     "@vanilla-extract/dynamic": "^2.0.2"
   },
   "peerDependencies": {
@@ -45,8 +45,8 @@
     "@vanilla-extract/vite-plugin": "^3.1.2",
     "vite-tsconfig-paths": "^3.3.17",
     "@radix-ui/colors": "^0.1.8",
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
+    "@types/react": "^18.0.20",
+    "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^1.1.4",
     "typescript": "^4.4.4",
     "vite": "^2.7.2",
