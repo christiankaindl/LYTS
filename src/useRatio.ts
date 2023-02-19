@@ -1,6 +1,3 @@
-import { useLayoutEffect, useState } from "react"
-import useIsomorphicLayoutEffect from "./hooks/useIsomorphicLayoutEffect"
-
 /**
  * Parse ration string in the format `${number}/${number}`. Useful for flexGrow values.
  *
@@ -8,13 +5,7 @@ import useIsomorphicLayoutEffect from "./hooks/useIsomorphicLayoutEffect"
  * @returns An array with the parsed ratios
  */
 export function useRatio (ratioString: string | boolean = false) {
-  const [ratios, setRatios] = useState(() => parseRatioString(ratioString))
-  useIsomorphicLayoutEffect(() => {
-    setRatios(
-      parseRatioString(ratioString)
-    )
-  }, [ratioString])
-  return ratios
+  return parseRatioString(ratioString)
 }
 
 function parseRatioString (ratioString: string | boolean): string | string[] | undefined {
