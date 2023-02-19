@@ -67,3 +67,10 @@ A real-world example using LYTS is this documentation site, which makes extensiv
 ## Support & help
 
 If you get stuck, [reach out to @christiankaindl](https://twitter.com/christiankaindl) on Twitter. In case of bugs, [open an issue on GitHub](https://github.com/christiankaindl/LYTS/issues).
+
+## Local Development
+
+```sh
+npm install
+npm run dev
+```
