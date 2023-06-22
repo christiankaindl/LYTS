@@ -32,8 +32,8 @@
     }
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.0.0",
-    "@vanilla-extract/dynamic": "^2.0.2"
+    "@radix-ui/react-slot": "^1.0.2",
+    "@vanilla-extract/dynamic": "^2.0.3"
   },
   "peerDependencies": {
     "react": "^16.8 || ^17.0 || ^18.0",
