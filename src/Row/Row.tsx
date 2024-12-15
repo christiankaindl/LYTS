@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, CSSProperties, isValidElement } from 'react'
+import React, { Children, cloneElement, CSSProperties, isValidElement, type ReactElement } from 'react'
 import * as styles from './Row.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import Box, { BoxProps } from '@lib/Box/Box'
@@ -63,9 +63,9 @@ export const Row = React.forwardRef<Ref, RowProps>(function Row ({
           if (!child) return null
           if (!isValidElement(child)) return child
           return (
-            cloneElement(child, {
+            cloneElement(child as ReactElement<{ style: CSSProperties }>, {
               style: {
-                ...(child.props.style ?? {}),
+                ...(child as ReactElement<{ style: CSSProperties }>).props.style,
                 ...assignInlineVars({
                   [styles.flexGrow]: typeof ratios === 'string'
                     ? ratios

@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, FunctionComponent, isValidElement } from 'react'
+import React, { Children, cloneElement, FunctionComponent, isValidElement, type CSSProperties, type ReactElement } from 'react'
 import * as styles from './Columns.css'
 import Box, { BoxProps } from '@lib/Box/Box'
 import { useRatio } from '@lib/useRatio'
@@ -54,9 +54,9 @@ export const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
           if (!child) return null
           if (!isValidElement(child)) return child
           return (
-            cloneElement(child, {
+            cloneElement(child as ReactElement<{ style: CSSProperties }>, {
               style: {
-                ...(child.props.style ?? {}),
+                ...(child as ReactElement<{ style: CSSProperties }>).props.style,
                 ...assignInlineVars({
                   [styles.flexGrow]: typeof ratios === 'string'
                     ? ratios

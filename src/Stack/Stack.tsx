@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, isValidElement } from 'react'
+import React, { Children, cloneElement, isValidElement, type CSSProperties, type ReactElement } from 'react'
 import * as styles from './Stack.css'
 import Box, { BoxProps } from '@lib/Box/Box'
 import { useRatio } from '@lib/useRatio'
@@ -43,9 +43,9 @@ export const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
           if (!child) return null
           if (!isValidElement(child)) return child
           return (
-            cloneElement(child, {
+            cloneElement(child as ReactElement<{ style: CSSProperties }>, {
               style: {
-                ...child.props.style,
+                ...(child as ReactElement<{ style: CSSProperties }>).props.style,
                 ...assignInlineVars({
                   [styles.flexGrow]: typeof ratios === 'string'
                       ? ratios
