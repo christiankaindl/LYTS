@@ -1,5 +1,5 @@
+import { createRoot } from 'react-dom/client'
 import React, { FunctionComponent } from 'react'
-import ReactDOM from 'react-dom'
 import { Stack, Row, Clamp, Columns, Grid, Box, Breakout, Split } from './'
 import DebugProvider from './DebugProvider/DebugProvider'
 
@@ -108,9 +108,10 @@ const App: FunctionComponent = function () {
   )
 }
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'))
+
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 )
