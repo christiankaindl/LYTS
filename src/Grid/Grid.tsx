@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import { Children } from 'react'
 import * as styles from './Grid.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import Box, { BoxProps } from '@lib/Box/Box'
@@ -9,24 +9,21 @@ export interface GridProps extends BoxProps {
   gridMaxRowItems?: number
 }
 
-type Ref = HTMLDivElement
-
 export const gridStyles = styles ?? {}
 
 /**
  * Grid layout with with responsive defaults, but also fully customizable with standard CSS grid properties.
  */
-export const Grid = React.forwardRef<Ref, GridProps>(function Split ({
+export function Grid ({
   children,
   gridItemMinWidth = '300px',
   gridMaxRowItems,
   style = {},
   ...props
-}, ref) {
+}: GridProps) {
   return (
     <Box
       {...props}
-      ref={ref}
       className={`${styles.grid} ${props.className ?? ''}`}
       style={{
         ...style,
@@ -40,4 +37,4 @@ export const Grid = React.forwardRef<Ref, GridProps>(function Split ({
       {children}
     </Box>
   )
-})
+}

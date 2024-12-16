@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, isValidElement, type CSSProperties, type ReactElement } from 'react'
+import { Children, cloneElement, isValidElement, type CSSProperties, type ReactElement } from 'react'
 import * as styles from './Stack.css'
 import Box, { BoxProps } from '@lib/Box/Box'
 import { useRatio } from '@lib/useRatio'
@@ -14,25 +14,22 @@ export interface StackProps extends BoxProps<'column'> {
    * @see `ratio`  Columns
    */
   expandChildren?: boolean | string
-}
-
-type Ref = HTMLDivElement
+} 
 
 export const stackStyles = styles ?? {}
 
 /**
  * Vertically stacked elements, taking up the full width by default. Best nested within other Stacks.
  */
-export const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
+export function Stack ({
   children,
   expandChildren = false,
   ...props
-}, ref) {
+}: StackProps) {
   const ratios = useRatio(expandChildren)
   return (
     <Box
       {...props}
-      ref={ref}
       className={`${styles.stack} ${props.className ?? ''}`}
       orientation='column'
     >
@@ -57,4 +54,4 @@ export const Stack = React.forwardRef<Ref, StackProps>(function Stack ({
         })}
     </Box>
   )
-})
+}

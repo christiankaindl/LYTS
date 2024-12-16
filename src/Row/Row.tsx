@@ -45,7 +45,6 @@ export const Row = React.forwardRef<Ref, RowProps>(function Row ({
   return (
     <Box
       {...props}
-      ref={ref}
       className={`${styles.row} ${props.className ?? ''}`}
       style={{
         ...style,

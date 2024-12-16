@@ -1,12 +1,33 @@
 import { createRoot } from 'react-dom/client'
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useLayoutEffect, useRef, useState, type RefObject } from 'react'
 import { Stack, Row, Clamp, Columns, Grid, Box, Breakout, Split } from './'
 import DebugProvider from './DebugProvider/DebugProvider'
+
+function ForwardRefTest () {
+  const ref = useRef<HTMLDivElement>(null)
+  const [height, setHeight] = useState<number | undefined>()
+
+  useLayoutEffect(() => {
+    setHeight(ref.current?.clientHeight)
+  })
+
+  return (
+    <div>
+      <ChildWithRef ref={ref} />
+      Height: {height}
+    </div>
+  )
+}
+
+function ChildWithRef ({ ref }: { ref: RefObject<HTMLDivElement | null> }) {
+  return <Stack ref={ref}>Child with ref</Stack>
+}
 
 const App: FunctionComponent = function () {
   return (
     <Stack gap={1.5} style={{ padding: 30 }}>
       <DebugProvider>
+        <p>Default Stack</p>
         <Stack xAlign='end' gap={2}>
           <Box bleed='10px 0'>Item 1</Box>
           <Box>Item 2</Box>
@@ -103,11 +124,14 @@ const App: FunctionComponent = function () {
           <Box>Item 2</Box>
           <Box>Item 3</Box>
         </Grid>
+
+        <ForwardRefTest />
       </DebugProvider>
     </Stack>
   )
 }
 
+// @ts-expect-error
 const root = createRoot(document.getElementById('root'))
 
 root.render(

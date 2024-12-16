@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent } from 'react'
+import { Children } from 'react'
 import * as styles from './Clamp.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import Box, { BoxProps } from '@lib/Box/Box'
@@ -14,7 +14,6 @@ export interface ClampProps extends BoxProps {
   clamp: string | [maxWidth: string | null, maxHeight: string]
 }
 
-type Ref = HTMLDivElement
 export const clampStyles = styles ?? {}
 
 /**
@@ -22,12 +21,12 @@ export const clampStyles = styles ?? {}
  *
  * @see https://www.joshwcomeau.com/css/full-bleed/ for a detailed explanation of how Clamp and Breakout work internally.
  */
-export const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
+export function Clamp ({
   children,
   clamp,
   style = {},
   ...props
-}, ref) {
+}: ClampProps) {
   const isArray = Array.isArray(clamp)
   const clampWidth = isArray ? clamp[0] : clamp
   const clampHeight = isArray ? clamp[1] : undefined
@@ -39,7 +38,6 @@ export const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
   return (
     <Box
       {...props}
-      ref={ref}
       className={`${styles.clamp} ${props.className ?? ''}`}
       style={{
         ...style,
@@ -53,4 +51,4 @@ export const Clamp = React.forwardRef<Ref, ClampProps>(function Clamp ({
       {children}
     </Box>
   )
-})
+}

@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, FunctionComponent, isValidElement, type CSSProperties, type ReactElement } from 'react'
+import { Children, cloneElement, isValidElement, type CSSProperties, type ReactElement } from 'react'
 import * as styles from './Columns.css'
 import Box, { BoxProps } from '@lib/Box/Box'
 import { useRatio } from '@lib/useRatio'
@@ -22,23 +22,21 @@ export interface ColumnsProps extends BoxProps {
   collapseAt?: string
 }
 
-type Ref = HTMLDivElement
 export const columnsStyles = styles ?? {}
 
 /**
  * Extrinsicly sized columns, filling the whole available space and wrapping all-at-once when the `collapseAt` value is reached. Space distribution can be customized with the `ratio` prop.
  */
-export const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
+export function Columns ({
   children,
   ratio,
   collapseAt = '0',
   ...props
-}, ref) {
+}: ColumnsProps) {
   const ratios = useRatio(ratio)
   return (
     <Box
       {...props}
-      ref={ref}
       className={`${styles.columns} ${props.className ?? ''}`}
       style={{
         ...(props.style ?? {}),
@@ -68,4 +66,4 @@ export const Columns = React.forwardRef<Ref, ColumnsProps>(function Columns ({
         })}
     </Box>
   )
-})
+}

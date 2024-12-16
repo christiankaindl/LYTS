@@ -1,4 +1,3 @@
-import { FunctionComponent } from "react";
 import { Box, BoxProps } from "@lib/Box/Box";
 import * as styles from './Breakout.css'
 
@@ -10,11 +9,11 @@ export const breakoutStyles = styles ?? {}
  * @see Clamp
  * @see Grid
  */
-export const Breakout: FunctionComponent<BoxProps> = function ({ children, ...props }) {
+export function Breakout ({ children, ...props }: BoxProps) {
   return (
     <Box
       {...props}
-      className={`${styles.breakout}`}
+      className={styles.breakout}
     >
       {children}
     </Box>

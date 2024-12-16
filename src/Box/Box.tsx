@@ -1,11 +1,12 @@
 import { useAlign } from "@lib/hooks/useAlign";
 import { Slot } from "@radix-ui/react-slot";
 import { assignInlineVars } from "@vanilla-extract/dynamic";
-import { CSSProperties, forwardRef } from "react";
+import { CSSProperties, type RefObject } from "react";
 import * as styles from './Box.css'
 
 // TODO: Add `inline` prop?
 export interface BoxProps<Direction = 'row'> extends React.HTMLAttributes<HTMLElement> {
+  ref?: RefObject<HTMLDivElement | null>
   /**
    * Amount of space between elements. Same as CSS' `gap`.
    * @docs https://developer.mozilla.org/en-US/docs/Web/CSS/gap
@@ -52,13 +53,12 @@ export interface BoxProps<Direction = 'row'> extends React.HTMLAttributes<HTMLEl
     : CSSProperties['justifyContent']
 }
 
-type Ref = HTMLDivElement
 export const boxStyles = styles ?? {}
 
 /**
  * Generic flexbox context with convenience props such as `xAlign`/`yAlign`for general alignment, `bleed` for visual alignment and `asChild` to customize the rendered element.
  */
-const Box = forwardRef<Ref, BoxProps>(function Box ({
+export function Box ({
   children,
   gap,
   asChild = false,
@@ -72,7 +72,7 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
   xAlign = 'initial',
   yAlign = 'initial',
   ...props
-}, ref) {
+}: BoxProps) {
   const Comp = asChild ? Slot : 'div';
   const align = useAlign(orientation, xAlign, yAlign)
 
@@ -100,7 +100,6 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
   return (
     <Comp
       {...props}
-      ref={ref}
       className={`${styles.box} ${props.className ?? ''}`}
       style={{
         ...style,
@@ -110,9 +109,7 @@ const Box = forwardRef<Ref, BoxProps>(function Box ({
       {children}
     </Comp>
   )
-})
-
-export { Box }
+}
 
 export default Box
 
