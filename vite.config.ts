@@ -12,11 +12,7 @@ export default defineConfig({
     vanillaExtractPlugin(),
     react(),
     // Generate TypeScript types
-    dts({
-      outputDir: './dist',
-      skipDiagnostics: false,
-      logDiagnostics: true
-    })
+    dts(),
   ],
   resolve: {
     alias: {
