@@ -1,5 +1,4 @@
-import { legacyGapEnabled } from "@lib/gapFallback.css";
-import { createVar, globalStyle, style } from "@vanilla-extract/css";
+import { createVar, style } from "@vanilla-extract/css";
 import { calc } from '@vanilla-extract/css-utils'
 
 export const vars = {
@@ -37,10 +36,4 @@ export const box = style({
   marginRight: calc(vars.bleedRight).negate().toString(),
   marginBottom: calc(vars.bleedBottom).negate().toString(),
   marginLeft: calc(vars.bleedLeft).negate().toString(),
-})
-
-globalStyle(`${legacyGapEnabled} ${box}`, {
-  vars: {
-    [vars.gap]: 'inherit'
-  }
 })
