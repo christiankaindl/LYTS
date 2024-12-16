@@ -35,7 +35,7 @@ export const Row = React.forwardRef<Ref, RowProps>(function Row ({
   yAlign = 'center',
   style = {},
   ...props
-}, ref) {
+}: RowProps) {
   if (wrap === true) {
     wrap = 'wrap'
   } else if (wrap === false) {
