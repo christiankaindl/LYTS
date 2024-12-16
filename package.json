@@ -15,6 +15,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
+  "prepublishOnly": "npm run build",
   "files": [
     "dist",
     "src",
