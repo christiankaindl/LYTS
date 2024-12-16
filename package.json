@@ -1,7 +1,7 @@
 {
   "name": "@christiankaindl/lyts",
   "description": "Layout primitives for React",
-  "version": "2.0.0",
+  "version": "2.0.0-beta.0",
   "author": "Christian Kaindl",
   "license": "MIT",
   "homepage": "https://lyts.christiankaindl.com",
