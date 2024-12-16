@@ -8,9 +8,9 @@
 
 Layout primitives to build any kind of layout with useful props like `bleed`, `asChild` and `xAlign`/`yAlign`.
 
-- **Composable** – Compose to create complex layouts
-- **Small bundle** – 4kB when using *all* exports
-- **Unstyled** – Use anything you want—Tailwind, CSS Modules, etc.
+- **Like Lego** – Compose primitives to create complex layouts
+- **Tiny bundle** – Only 445 Bytes total ([source](https://bundlephobia.com/package/@christiankaindl/lyts@2.0.0-beta.3))
+- **Unstyled** – Bring your own styling solution—Tailwind, CSS Modules, you name it
 - **Layout props** – Simple & productive API
 
 ⚛️ [Components API](https://lyts.christiankaindl.com/components) · 📚 [Guides](https://lyts.christiankaindl.com/guides) · 📖 [Examples](https://lyts.christiankaindl.com/examples)
