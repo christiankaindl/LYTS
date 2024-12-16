@@ -21,6 +21,9 @@ Layout primitives to build any kind of layout with useful props like `bleed`, `a
 
 And that's all there is to set up! Now import one of the base components—<a href='https://lyts.christiankaindl.com/components/stack'>Stack</a>, <a href='https://lyts.christiankaindl.com/components/row'>Row</a>, <a href='https://lyts.christiankaindl.com/components/clamp'>Clamp</a>, <a href='https://lyts.christiankaindl.com/components/columns'>Columns</a>, <a href='https://lyts.christiankaindl.com/components/grid'>Grid</a>—and start building great layouts.
 
+> [!NOTE]
+> Version 2.0 introduced support for React 19, and migrated away from using `forwardRef()`. This means v2.0 may not work as intended when using with React 18 or earlier. If you want to pass `ref`s to LYTS components and use React 18 or lower, consider using v1.2.0 instead, which has full support.
+
 ## Usage
 
 Layout components can be composed until you achieve your desired layout. For example, The following \<CenterCard> component renders a card with a max-width of 400px, centers it and uses a <a href='https://lyts.christiankaindl.com/components/stack'>Stack</a> to get consistent spacing:
