@@ -8,18 +8,14 @@
 
 Layout primitives to build any kind of layout with useful props like `bleed`, `asChild` and `xAlign`/`yAlign`.
 
-- **Composable** – Combine to create complex layouts
+- **Composable** – Compose to create complex layouts
 - **Small bundle** – 4kB when using *all* exports
-- **Unstyled** – Use the styling solution of your choice
-- **Layout props** – Simple, productive API
+- **Unstyled** – Use anything you want—Tailwind, CSS Modules, etc.
+- **Layout props** – Simple & productive API
 
-## Docs
+⚛️ [Components API](https://lyts.christiankaindl.com/components) · 📚 [Guides](https://lyts.christiankaindl.com/guides) · 📖 [Examples](https://lyts.christiankaindl.com/examples)
 
-**https://lyts.christiankaindl.com**
-
-⚛️ [Components](https://lyts.christiankaindl.com/components) · 📚 [Guides](https://lyts.christiankaindl.com/guides) · 📖 [Examples](https://lyts.christiankaindl.com/examples)
-
-And that's all there is to set up! Now import one of the base components—<a href='https://lyts.christiankaindl.com/components/stack'>Stack</a>, <a href='https://lyts.christiankaindl.com/components/row'>Row</a>, <a href='https://lyts.christiankaindl.com/components/clamp'>Clamp</a>, <a href='https://lyts.christiankaindl.com/components/columns'>Columns</a>, <a href='https://lyts.christiankaindl.com/components/grid'>Grid</a>—and start building great layouts.
+To get started, import a base component and compose them together—<a href='https://lyts.christiankaindl.com/components/stack'>Stack</a>, <a href='https://lyts.christiankaindl.com/components/row'>Row</a>, <a href='https://lyts.christiankaindl.com/components/clamp'>Clamp</a>, <a href='https://lyts.christiankaindl.com/components/columns'>Columns</a>, <a href='https://lyts.christiankaindl.com/components/grid'>Grid</a>—happy layout building!
 
 > [!NOTE]
 > Version 2.0 introduced support for React 19, and migrated away from using `forwardRef()`. This means v2.0 may not work as intended when using with React 18 or earlier. If you want to pass `ref`s to LYTS components and use React 18 or lower, consider using v1.2.0 instead, which has full support.
