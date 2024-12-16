@@ -19,25 +19,6 @@ Layout primitives to build any kind of layout with useful props like `bleed`, `a
 
 ⚛️ [Components](https://lyts.christiankaindl.com/components) · 📚 [Guides](https://lyts.christiankaindl.com/guides) · 📖 [Examples](https://lyts.christiankaindl.com/examples)
 
-## Installation
-
-```sh
-npm install @christiankaindl/lyts
-```
-
-After intallation, import the necessary CSS styles into your application. For example in a Next.js app, import them in `_app.js`:
-
-```jsx
-/* _app.js */
-import '@christiankaindl/lyts/style.css' // Import the library styles here
-
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
-
-export default MyApp
-```
-
 And that's all there is to set up! Now import one of the base components—<a href='https://lyts.christiankaindl.com/components/stack'>Stack</a>, <a href='https://lyts.christiankaindl.com/components/row'>Row</a>, <a href='https://lyts.christiankaindl.com/components/clamp'>Clamp</a>, <a href='https://lyts.christiankaindl.com/components/columns'>Columns</a>, <a href='https://lyts.christiankaindl.com/components/grid'>Grid</a>—and start building great layouts.
 
 ## Usage
