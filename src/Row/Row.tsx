@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, CSSProperties, isValidElement, type ReactElement } from 'react'
+import { Children, cloneElement, CSSProperties, isValidElement, type ReactElement } from 'react'
 import * as styles from './Row.css'
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import Box, { BoxProps } from '@lib/Box/Box'
@@ -21,14 +21,12 @@ export interface RowProps extends BoxProps {
   expandChildren?: boolean | string
 }
 
-type Ref = HTMLDivElement
-
 export const rowStyles = styles ?? {}
 
 /**
  * Horizontally stacked components, with convenience `wrap` and `expand` props. By default, all children are vertically centered and horizontally start-aligned.
  */
-export const Row = React.forwardRef<Ref, RowProps>(function Row ({
+export function Row ({
   children,
   wrap = 'nowrap',
   expandChildren = false,
@@ -77,4 +75,4 @@ export const Row = React.forwardRef<Ref, RowProps>(function Row ({
       }
     </Box>
   )
-})
+}
