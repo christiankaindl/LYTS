@@ -27,8 +27,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'lyts',
-      fileName: (format) => `lyts.${format}.js`
+      formats: ['es'],
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

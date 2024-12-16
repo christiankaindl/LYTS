@@ -17,21 +17,21 @@
   },
   "prepublishOnly": "npm run build",
   "files": [
-    "dist",
-    "src",
-    "tsconfig.json"
+    "dist"
   ],
   "type": "module",
-  "main": "./dist/lyts.umd.js",
-  "module": "./dist/lyts.es.js",
-  "types": "./dist/src/index.d.ts",
+  "main": "./dist/lyts.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     "./style.css": "./dist/style.css",
     ".": {
-      "import": "./dist/lyts.es.js",
-      "require": "./dist/lyts.umd.js"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/lyts.js"
     }
   },
+  "sideEffects": [
+    "**/*.css"
+  ],
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.1",
     "@vanilla-extract/dynamic": "^2.1.2"
