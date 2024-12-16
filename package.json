@@ -8,7 +8,7 @@
   "bugs": "https://github.com/christiankaindl/LYTS/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/christiankaindl/LYTS.git"
+    "url": "git+https://github.com/christiankaindl/LYTS.git"
   },
   "scripts": {
     "dev": "vite",
